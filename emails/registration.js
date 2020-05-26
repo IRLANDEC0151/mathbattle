@@ -5,6 +5,6 @@ module.exports=function(email){
         to: email,
         subject:'Акаунт создан',
         html:`<h1>Добро пожаловать ${email}</h1>
-        <h1>Добро пожаловать ${keys.BASE_URL}</h1>`
+        <h1>Добро пожаловать: <a href="${keys.BASE_URL}"> Главная страница</a></h1>`
     }
 }
