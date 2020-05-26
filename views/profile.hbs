@@ -1,0 +1,40 @@
+<body>
+    <div class="container">
+    <h1>Профиль</h1>
+
+        <div class="row justify-content-around">
+            <div class="col-xl-5" style="background-color: white;">
+                {{#if user.avatarUrl}}
+                <div style="width: 400px;height: 400px;">
+
+                <img src="/{{user.avatarUrl}}" style="width: 400px;height: 400px;" alt="avatar-{{user.name}}">
+                </div>
+                {{else}}
+                <p>Аватара нет</p>
+                {{/if}}
+            </div>
+            <div class="col-xl-5"  style="background-color: white;">
+                <form action="/profile" method="POST" enctype="multipart/form-data">
+                 <p>Ваш email: <strong>{{user.email}}</strong></p>
+                    <div class="form-group">
+                         <label for="exampleFormControlInput1">Имя</label>
+                         <input type="text" class="form-control" name="name" value="{{user.name}}" required>
+                    </div>
+                    <p>Аватар</p>
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name='avatar' id="inputGroupFile01" >
+                            <label class="custom-file-label" for="inputGroupFile01">Выбрать аватар</label>
+                        </div>
+                         </div> 
+                    <input type="hidden" name="_csrf" value="{{csrf}}" />
+                    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+
+                </form>
+
+             
+            </div>
+        </div>
+    </div>
+    <a href="/profile/logout">Выйти</a>
+</body>

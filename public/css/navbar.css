@@ -1,0 +1,19 @@
+.logoIMG {
+  width: 6rem;
+  height: 6rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.navbar {
+  background-color: #ff9800;
+  height: 10rem;
+}
+.navbar-nav li {
+  margin-right: 1.1rem;
+}
+.nav-link {
+  font-size: 3rem;
+}
+.block-text {
+  font-size: 2.5rem;
+}

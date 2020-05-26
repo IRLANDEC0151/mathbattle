@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 offset-xl-3">
+     
+      <h1>Забыли пароль?</h1>
+       {{#if error}}
+      <p class="errorLogin">{{error}}</p>
+      {{/if}}
+      <form action="/auth/reset" method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Ваш email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            aria-describedby="emailHelp"
+            value="{{dataInput.email}}"
+            required
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >Мы никому не передадим ваши данные</small
+          >
+        </div>
+       
+        <input type="hidden" name="_csrf" value="{{csrf}}" />
+        <button type="submit" class="btn btn-primary">
+          Сбросить пароль
+        </button>
+      </form>
+  </div>
+</div>
+</div>

@@ -1,0 +1,629 @@
+.standardModes {
+  margin-top: 6rem;
+}
+.standardModes-header {
+  font-size: 4.5rem;
+}
+.standardModes-setting {
+  border-radius: 5% 5% 5% 5% / 5% 5% 5% 5%;
+  background-color: white;
+  box-shadow: 0px 40px 20px #978f87;
+}
+.standardModes-header {
+  text-align: center;
+}
+.standardModes .levelSetting {
+  text-align: center;
+}
+.standardModes .levelSetting-header {
+  font-size: 3rem;
+}
+.standardModes .levelSetting-content {
+  font-size: 2rem;
+  color: #03a9f4;
+}
+.standardModes .levelSetting-slider {
+  margin: 0;
+}
+.arifmSetting {
+  margin-top: 7rem;
+  text-align: center;
+}
+.arifmSetting-header {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.arifmSetting-op {
+  text-align: center;
+}
+.arifmSetting-choose {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0;
+}
+.arifmSetting-choose li {
+  text-align: left;
+  float: left;
+  width: 40%;
+  margin-left: 5rem;
+}
+.arifmSetting-choose span {
+  padding-left: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: #000;
+  white-space: normal;
+  vertical-align: top;
+}
+.start {
+  margin: 2rem 0;
+}
+.start-btn {
+  background-color: #03a9f4;
+  color: #fff;
+  font-size: 2.8rem;
+}
+.setting-right {
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  background-color: white;
+  border-radius: 10% 10% 10% 10% / 10% 10% 10% 10%;
+  box-shadow: 0px 20px 20px #978f87;
+  width: 50%;
+  height: 50%;
+  right: 0;
+  top: 50%;
+  margin-top: -140px;
+  text-align: center;
+}
+.setting-right a {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  height: 4rem;
+}
+.setting-right .btn-group-vertical {
+  margin-top: 1rem;
+}
+.setting-right .btn-group-vertical .btn {
+  margin-bottom: 0.5rem;
+  width: 10rem;
+  height: 3rem;
+  font-size: 1.4rem;
+}
+.setting-right .competition {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 67px;
+  margin-right: 50%;
+}
+.setting-right .competition button {
+  font-size: 2rem;
+  height: 4rem;
+}
+.tooltip-inner {
+  font-size: 1.5rem;
+}
+.fastMatch {
+  visibility: hidden;
+}
+.fastMatch-space {
+  position: relative;
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 5% 5% 5% 5% / 10% 10% 10% 10%;
+  box-shadow: 0px 20px 20px #978f87;
+}
+.fastMatch-example {
+  margin: 4rem 0 4rem 4rem;
+  font-size: 4rem;
+  text-align: center;
+  opacity: 0;
+}
+.fastMatch-timer {
+  position: absolute;
+  margin-top: 1rem;
+  right: 0;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.fastMatch-timer p {
+  opacity: 0;
+  font-size: 4rem;
+  margin-top: 1.5rem;
+}
+.fastMatch-input-group {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.fastMatch-input-group .answer-form {
+  font-size: 2rem;
+  width: 20rem;
+}
+.fastMatch-input-group .skip {
+  position: absolute;
+  font-size: 1.5rem;
+  top: -35px;
+  cursor: pointer;
+  color: grey;
+  visibility: hidden;
+}
+.helperBottom {
+  opacity: 0;
+  position: absolute;
+  background-color: white;
+  border-radius: 5% 5% 5% 5% / 30% 30% 30% 30%;
+  box-shadow: 0px 20px 20px #978f87;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  height: 5rem;
+  transition: 1s;
+}
+.helperBottom-btn {
+  background-color: #03a9f4;
+  color: white;
+}
+.helperBottom p {
+  margin-top: 0.7rem;
+  color: #03a9f4;
+  text-align: center;
+  font-size: 2rem;
+}
+.helperBottom:hover {
+  background-color: #03a9f4;
+  transform: scale(1.1);
+}
+.helperBottom:hover p {
+  color: white;
+}
+.helperLeft {
+  opacity: 0;
+  position: absolute;
+  background-color: white;
+  border-radius: 10% 10% 10% 10% / 10% 10% 10% 10%;
+  box-shadow: 0px 20px 20px #978f87;
+  width: 50%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem;
+  transition: 0.5s;
+}
+.helperLeft p {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+.helperLeft:hover {
+  background-color: #ff9800;
+  transform: scale(1.1);
+}
+.helperRight {
+  opacity: 0;
+  position: absolute;
+  background-color: white;
+  border-radius: 10% 10% 10% 10% / 10% 10% 10% 10%;
+  box-shadow: 0px 20px 20px #978f87;
+  width: 50%;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  transition: 0.5s;
+  text-align: center;
+}
+.helperRight-timer {
+  font-size: 4rem;
+  margin-top: 3rem;
+}
+.helperRight-result {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+.helperRight-output {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.helperRight:hover {
+  background-color: #ff9800;
+  transform: scale(1.1);
+}
+.stat {
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  background-color: #ffaa56;
+  border-radius: 10% 10% 10% 10% / 10% 10% 10% 10%;
+  box-shadow: 0px 20px 20px #978f87;
+  width: 100%;
+  bottom: -25rem;
+  right: 0;
+  height: 9rem;
+  transition: 1s;
+  height: 120%;
+  text-align: center;
+}
+.stat-head p {
+  font-size: 3rem;
+  margin-top: 1.5rem;
+}
+.stat table .key {
+  float: left;
+}
+.stat table .value {
+  float: right;
+}
+.stat table td {
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+.stat-full {
+  position: absolute;
+  bottom: 0;
+  left: -107px;
+  margin-left: 50%;
+  font-size: 2rem;
+  color: #03a9f4;
+  cursor: pointer;
+}
+.modal-body table {
+  text-align: center;
+  border-spacing: 5px;
+  border-collapse: separate;
+}
+.modal-body table th {
+  padding: 10px;
+  font-size: 16px;
+}
+.modal-body table td {
+  padding: 10px;
+  font-size: 15px;
+}
+.modal-body:hover {
+  background-color: #ff9800;
+  transform: scale(1.1);
+}
+.range {
+  position: relative;
+  width: 38rem;
+  margin-left: 8rem;
+  height: 5px;
+}
+.range input {
+  width: 100%;
+  position: absolute;
+  top: 2px;
+  height: 0;
+  -webkit-appearance: none;
+}
+.range input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #03a9f4;
+  cursor: pointer;
+  border: 0 !important;
+}
+.range input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #03a9f4;
+  cursor: pointer;
+  border: 0 !important;
+}
+.range input::-ms-thumb {
+  width: 18px;
+  height: 18px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #03a9f4;
+  cursor: pointer;
+  border: 0 !important;
+}
+.range input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: gray;
+}
+.range input::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: gray;
+}
+.range input::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: gray;
+}
+.range input:focus {
+  background: none;
+  outline: none;
+}
+.range input::-ms-track {
+  width: 550px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.range-labels {
+  margin-left: 4px;
+  list-style: none;
+}
+.range-labels li {
+  position: relative;
+  float: left;
+  width: 90.25px;
+  text-align: center;
+  color: grey;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.range-labels li::before {
+  position: absolute;
+  top: -18px;
+  content: "";
+  margin: 0 auto;
+  width: 9px;
+  height: 9px;
+  background: grey;
+  border-radius: 50%;
+}
+.range-labels .active {
+  color: #03a9f4;
+}
+.range-labels .selected::before {
+  background: #03a9f4;
+}
+.range-labels .active.selected::before {
+  display: none;
+}
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.button {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 36px;
+  overflow: hidden;
+}
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.knobs {
+  z-index: 2;
+}
+.layer {
+  width: 100%;
+  background-color: #ffc7c7;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+#button-1 .knobs:before {
+  content: "НЕТ";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 27px;
+  height: 27px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 0.8;
+  padding: 9px 4px;
+  background-color: #f44336;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+#button-1 .checkbox:checked + .knobs:before {
+  content: "ДА";
+  left: 42px;
+  background-color: #03a9f4;
+}
+#button-1 .checkbox:checked ~ .layer {
+  background-color: #d1f0fd;
+}
+#button-1 .knobs,
+#button-1 .knobs:before,
+#button-1 .layer {
+  transition: 0.3s ease all;
+}
+#button-2 .knobs::after {
+  content: "ДА";
+  position: absolute;
+  left: 42px;
+  top: 4px;
+  width: 27px;
+  height: 27px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 0.8;
+  padding: 9px 4px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+#button-2 .checkbox:checked + .knobs:after {
+  content: "НЕТ";
+  left: 4px;
+  background-color: #f44336;
+}
+#button-2 .checkbox:checked ~ .layersum {
+  background-color: #ffc7c7;
+}
+#button-2 .knobs,
+#button-2 .knobs:before,
+#button-2 .layersum {
+  transition: 0.3s ease all;
+}
+.layersum {
+  width: 100%;
+  background-color: #d1f0fd;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 100px;
+  transition: 0.3s ease all;
+}
+.animate-setting {
+  animation-name: setting-move;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.animate-back-setting {
+  animation-name: setting-back;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.animate-fastMath {
+  animation-name: fastMatch-move;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.animate-back-fastMath {
+  animation-name: fastMatch-back;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.animate-helperBottom {
+  animation-name: helperBottom-fastMatch-move;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+.animate-helperLeft {
+  animation-name: helperLeft-fastMatch-move;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.animate-helperRight {
+  animation-name: helperRight-fastMatch-move;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.animate-settingStandardModes {
+  transition: 0.5s;
+  animation-name: settingRight-standardModes-move;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.animate-stat {
+  animation-name: stat-fastMatch-move;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes setting-move {
+  100% {
+    opacity: 0;
+    transform: translateX(-200rem);
+  }
+}
+@keyframes setting-back {
+  0% {
+    opacity: 0;
+    transform: translateX(-200rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fastMatch-move {
+  0% {
+    opacity: 0;
+    transform: translateY(-100rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-49.9rem);
+  }
+}
+@keyframes fastMatch-back {
+  0% {
+    opacity: 1;
+    transform: translateY(-49.9rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100rem);
+  }
+}
+@keyframes helperBottom-fastMatch-move {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: -9rem;
+  }
+}
+@keyframes helperLeft-fastMatch-move {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    left: -23rem;
+  }
+}
+@keyframes helperRight-fastMatch-move {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    right: -23rem;
+  }
+}
+@keyframes settingRight-standardModes-move {
+  100% {
+    opacity: 1;
+    transform: translateX(32rem);
+  }
+}
+@keyframes stat-fastMatch-move {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(15rem);
+  }
+}

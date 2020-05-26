@@ -1,0 +1,366 @@
+    <!-- стандартный матч и его настройки -->
+    <div class="standardModes">
+        <div class="container">
+            <!-- Настройки быстрого матча -->
+            <div class="standardModes-area">
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-6 offset-lg-0 standardModes-setting">
+                        <!-- заголовок настроек -->
+                        <div class="standardModes-header">
+                            <p>Настройки стандартного матча</p>
+                        </div>
+                        <!-- настройки уровня сложности -->
+                        <div class="levelSetting">
+                            <p class="levelSetting-header">
+                                Уровень сложности
+                            </p>
+                            <p class="levelSetting-content">
+                                {{!-- FIXME: переменная должна задавать
+                                начальное значение --}} Числа от 1 до 10
+                            </p>
+                            <!-- слайдер уровня сложности -->
+                        </div>
+                        <div class="levelSetting-slider">
+                            <div class="range">
+                                <input
+                                    type="range"
+                                    min="1"
+                                    max="5"
+                                    steps="1"
+                                    value="0"
+                                />
+                            </div>
+                            <div class="range-numbers">
+                                <ul class="range-labels">
+                                    <li class="active selected">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- настройки арифм операций -->
+                        <div class="arifmSetting">
+                            <!-- заголовок -->
+                            <div class="arifmSetting-header">
+                                <p>Арифметические операции</p>
+                            </div>
+                            <div class="arifmSetting-op">
+                                <!-- выбор арифм операций -->
+                                <ul class="arifmSetting-choose">
+                                    <li>
+                                        <div
+                                            class="button r"
+                                            data-arifm="сложение"
+                                            id="button-2"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="checkbox"
+                                            />
+                                            <div class="knobs"></div>
+                                            <div class="layersum"></div>
+                                        </div>
+                                        <span>Сложение</span>
+                                    </li>
+                                    <li>
+                                        <div
+                                            class="button r"
+                                            data-arifm="умножение"
+                                            id="button-1"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="checkbox"
+                                            />
+                                            <div class="knobs"></div>
+                                            <div class="layer"></div>
+                                        </div>
+                                        <span>Умножение</span>
+                                    </li>
+                                    <li>
+                                        <div
+                                            class="button r"
+                                            data-arifm="вычитание"
+                                            id="button-1"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="checkbox"
+                                            />
+                                            <div class="knobs"></div>
+                                            <div class="layer"></div>
+                                        </div>
+                                        <span>Вычитание</span>
+                                    </li>
+                                    <li>
+                                        <div
+                                            class="button r"
+                                            data-arifm="деление"
+                                            id="button-1"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                class="checkbox"
+                                            />
+                                            <div class="knobs"></div>
+                                            <div class="layer"></div>
+                                        </div>
+                                        <span>Деление</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="start">
+                                <button class="btn start-btn">
+                                    Начать!
+                                </button>
+                            </div>
+                        </div>
+                        <div class="setting-right">
+                            <a
+                                class="btn start-btn"
+                                data-toggle="collapse"
+                                href="#collapseExample"
+                                aria-controls="collapseExample"
+                                data-tooltip="tooltip"
+                                data-placement="top"
+                                title="Нажмите, чтобы сыграть на время. По умолчанию игра длится 1 минуту"
+                            >
+                                Играть на время
+                            </a>
+                            {{!-- FIXME: цикл if работает наоборот --}} 
+                            {{#if isAuth}}
+
+                            <div class="competition">
+                                <button
+                                    class="btn btn-primary"
+                                    data-tooltip="tooltip"
+                                    data-placement="right"
+                                    title="Нажмите, чтобы соревноваться с другими учениками"
+                                >
+                                    Соревнование
+                                </button>
+                            </div>
+                            {{else}}
+
+                            <div class="competition">
+                                <button
+                                    class="btn btn-secondary"
+                                    data-tooltip="tooltip"
+                                    data-placement="bottom"
+                                    title="Войдите или зарегистрируйтесь, чтобы соревноваться с другими игроками"
+                                >
+                                    Соревнование
+                                </button>
+                            </div>
+
+                            {{/if}}
+
+                            <div class="collapse" id="collapseExample">
+                                <div
+                                    class="btn-group mr-2 btn-group-vertical"
+                                    role="group"
+                                    aria-label="First group"
+                                >
+                                    <button
+                                        type="button"
+                                        class="btn btn-success btn-secondary"
+                                        data-time="1"
+                                        style="border-radius: 5px;"
+                                    >
+                                        1 мин
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-time="2"
+                                        style="border-radius: 5px;"
+                                    >
+                                        2 мин
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-time="3"
+                                        style="border-radius: 5px;"
+                                    >
+                                        3 мин
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-danger"
+                                        data-time="0"
+                                        style="border-radius: 5px;"
+                                         data-toggle="collapse"
+                                        href="#collapseExample"
+                                        aria-controls="collapseExample"
+                                    >
+                                        Без времени
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- стандартный матч-->
+            <!-- появляется после выбора настроек примера -->
+            <div class="fastMatch">
+                <!-- само окно матча -->
+                <div class="row justify-content-md-center">
+                    <div
+                        class="col-lg-4 offset-lg-0 fastMatch-space"
+                        style="position: relative;"
+                    >
+                        <!-- кнопка начать -->
+                        <div class="fastMatch-timer">
+                            <p>!</p>
+                        </div>
+
+                        <div class="fastMatch-example">
+                            <span class="first-fastMatch-param">2</span>
+                            <span class="arifm-sign-param">+</span>
+                            <span class="second-fastMatch-param">2</span>
+                            <span>=</span>
+                        </div>
+
+                        <div class="fastMatch-input-group">
+                            <span class="skip">Пропустить</span>
+
+                            <input
+                                type="text"
+                                id="answer-input"
+                                class="form-control answer-form input-0"
+                                placeholder="ответ"
+                                maxlength="7"
+                                readonly
+                            />
+                        </div>
+
+                        <!-- всплювающя позсдказка -->
+                        <div class="helperBottom">
+                            <p>Вернуться к настройкам</p>
+                        </div>
+                        <div class="helperLeft">
+                            <p>
+                                Введите результат в поле ввода и нажмите
+                                <strong>Enter </strong> или
+                                <strong> ПРОБЕЛ</strong>
+                            </p>
+                        </div>
+                        <div class="helperRight">
+                            <p class="helperRight-timer"></p>
+                            <div class="helperRight-result">
+                                <p>Правильных :</p>
+                                <p class="helperRight-output"></p>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-head">
+                                <p>Результаты матча</p>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="key">Всего решено:</td>
+                                        <td class="value statAll" value></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">Правильных ответов:</td>
+                                        <td class="value statRight"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">Ошибок:</td>
+                                        <td class="value statFalse"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">
+                                            В среднем на один пример:
+                                        </td>
+                                        <td class="value statTime"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p
+                                class="stat-full"
+                                data-toggle="modal"
+                                data-target="#exampleModal"
+                            >
+                                Подробная статистика
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <form
+                    action="/standardModes/stat"
+                    method="POST"
+                    class="postStat"
+                >   
+                    <input type="hidden" name="_csrf" value="{{csrf}}" />
+                    <input type="hidden" name="allExample" value="1" class="allExample"/>
+                    <input type="hidden" name="correctExample" class="correctExample"  />
+                    <input type="hidden" name="percentageOfCorrectAnswers" class="percentageOfCorrectAnswers"  />
+                    <input type="hidden" name="timeMiddleExample" class="timeMiddleExample"  />
+                </form>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLabel">
+                            Подробная статистика
+                        </h2>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Пример</th>
+                                    <th>Ваш ответ</th>
+                                    <th>Правильный ответ</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-dismiss="modal"
+                        >
+                            Закрыть
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

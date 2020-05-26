@@ -1,0 +1,148 @@
+<body>
+  <!-- быстрый матч и его настройки -->
+  <div class="newFMatch">
+    <div class="container">
+      <!-- Настройки быстрого матча -->
+      <div class="newFMatch-area">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-6 offset-lg-0 newFMatch-setting">
+            <!-- заголовок настроек -->
+            <div class="newFMatch-header">
+              <p>Настройки матча</p>
+            </div>
+            <!-- настройки уровня сложности -->
+            <div class="levelSetting">
+              <p class="levelSetting-header">
+                Уровень сложности
+              </p>
+              <p class="levelSetting-content">
+                {{!-- FIXME: переменная должна задавать начальное значение --}}
+                Числа от 1 до 10
+              </p>
+              <!-- слайдер уровня сложности -->
+            </div>
+            <div class="levelSetting-slider">
+              <div class="range">
+                <input type="range" min="1" max="5" steps="1" value="0" />
+              </div>
+              <div class="range-numbers">
+                <ul class="range-labels">
+                  <li class="active selected">1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- настройки арифм операций -->
+            <div class="arifmSetting">
+              <!-- заголовок -->
+
+              <div class="arifmSetting-header">
+                <p>Арифметические операции</p>
+              </div>
+              <div class="arifmSetting-op">
+                <!-- выбор арифм операций -->
+                <ul class="arifmSetting-choose">
+                  <li>
+                    <div class="button r" data-arifm="сложение" id="button-2">
+                      <input type="checkbox" class="checkbox" />
+                      <div class="knobs"></div>
+                      <div class="layersum"></div>
+                    </div>
+                    <span>Сложение</span>
+                  </li>
+                  <li>
+                    <div class="button r" data-arifm="умножение" id="button-1">
+                      <input type="checkbox" class="checkbox" />
+                      <div class="knobs"></div>
+                      <div class="layer"></div>
+                    </div>
+                    <span>Умножение</span>
+                  </li>
+                  <li>
+                    <div class="button r" data-arifm="вычитание" id="button-1">
+                      <input type="checkbox" class="checkbox" />
+                      <div class="knobs"></div>
+                      <div class="layer"></div>
+                    </div>
+                    <span>Вычитание</span>
+                  </li>
+                  <li>
+                    <div class="button r" data-arifm="деление" id="button-1">
+                      <input type="checkbox" class="checkbox" />
+                      <div class="knobs"></div>
+                      <div class="layer"></div>
+                    </div>
+                    <span>Деление</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="start">
+                <button class="btn start-btn">
+                  Начать!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- быстрый матч-->
+      <!-- появляется после выбора настроек примера -->
+      <div class="fastMatch">
+        <!-- само окно матча -->
+        <div class="row justify-content-md-center">
+          <div class="col-lg-4 offset-lg-0 fastMatch-space">
+            <!-- кнопка начать -->
+            <div class="fastMatch-timer">
+              <p>!</p>
+            </div>
+
+            <div class="fastMatch-example">
+              <span class="first-fastMatch-param">2</span>
+              <span class="arifm-sign-param">+</span>
+              <span class="second-fastMatch-param">2</span>
+              <span>=</span>
+            </div>
+
+            <div class="fastMatch-input-group">
+              <span class="skip">Пропустить</span>
+
+              <input
+                type="text"
+                id="answer-input"
+                class="form-control answer-form input-0"
+                placeholder="ответ"
+                maxlength="7"
+                readonly
+              />
+            </div>
+
+            <!-- всплювающя позсдказка -->
+            <div class="helperBottom">
+              <p>Вернуться к настройкам</p>
+            </div>
+            <div class="helperLeft">
+              <p>
+                Введите результат в поле ввода и нажмите
+                <strong>Enter </strong> или
+                <strong> ПРОБЕЛ</strong>
+              </p>
+            </div>
+            <div class="helperRight">
+              <p class="helperRight-timer">0</p>
+              <div class="helperRight-result">
+                <p>Правильных :</p>
+                <p class="helperRight-output"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,118 @@
+<!-- Navbar -->
+        <main>
+            <nav class="navbar navbar-expand-lg navbar-light mb-2">
+                <img class="logoIMG"
+                    src="/math.svg"
+                    alt="MathBattle Logo"
+                />
+                <a class="navbar-brand block-text logoText" href="/">Math Battle</a>
+                <div
+                    class="collapse navbar-collapse d-flex flex-row-reverse my-3"
+                    id="navbarNav"
+                >
+                    <ul class="navbar-nav">
+                        {{#if  isFastMatch}}
+                        <li class="nav-item active">
+                            <a
+                                class="nav-link block-text font-weight-bold"
+                                href="/fastMatch"
+                                >Быстрый матч
+                                <span class="sr-only">(current)</span></a
+                            >
+                        </li>
+                        {{else}}
+                         <li class="nav-item ">
+                            <a
+                                class="nav-link block-text font-weight-bold"
+                                href="/fastMatch"
+                                >Быстрый матч
+                                <span class="sr-only">(current)</span></a
+                            >
+                        </li>
+                        {{/if}}
+
+                        {{#if  isModes}}
+                        <li class="nav-item active">
+                            <a
+                                class="nav-link block-text font-weight-bold"
+                                href="/modes"
+                                >Режимы</a
+                            >
+                        </li>
+                          {{else}}
+                           <li class="nav-item">
+                            <a
+                                class="nav-link block-text font-weight-bold"
+                                href="/modes"
+                                >Режимы</a
+                            >
+                        </li>
+                        {{/if}}
+
+
+                         {{#if  isLeaderboard}}
+                        <li class="nav-item active">
+                            <a
+                                class="nav-link block-text font-weight-bold"
+                                href="/leaderboard"
+                                >Таблицы лидеров</a
+                            >
+                        </li>
+                          {{else}}
+                            <li class="nav-item">
+                            <a
+                                class="nav-link block-text font-weight-bold"
+                                href="/leaderboard"
+                                >Таблицы лидеров</a
+                            >
+                        </li>
+                        {{/if}}
+
+
+                            {{#if isAuth}}
+                                     {{#if  isLogin}}
+                                        <li class="nav-item active">
+                                            <a
+                                                class="nav-link block-text font-weight-bold"
+                                                href="/profile"
+                                                >Профиль</a
+                                            >
+                                        </li>
+                                    {{else}}
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link block-text font-weight-bold"
+                                                href="/profile"
+                                                >Профиль</a
+                                            >
+                                        </li>
+
+                                    {{/if}}
+                            {{else}}
+
+                                    {{#if  isLogin}}
+                                        <li class="nav-item active">
+                                            <a
+                                                class="nav-link block-text font-weight-bold"
+                                                href="/auth/login#login"
+                                                >Войти в профиль</a
+                                            >
+                                        </li>
+                                    {{else}}
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link block-text font-weight-bold"
+                                                href="/auth/login#login"
+                                                >Войти в профиль</a
+                                            >
+                                        </li>
+
+                                    {{/if}}
+
+                            
+                            {{/if}}
+                       
+                    </ul>
+                </div>
+            </nav>
+        </main>

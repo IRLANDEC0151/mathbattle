@@ -1,0 +1,777 @@
+// Цвета
+@background-area-color: #f5f5f5;
+@background-navbar-color: #ff9800;
+@btn-color: #03a9f4;
+@navbar-text-blocks: #0d0d0d;
+@content: red;
+
+@helperMargin: 4rem;
+
+//НАСТРОЙКИ быстрого матча
+
+.standardModes {
+    margin-top: 6rem;
+
+    &-header {
+        font-size: 4.5rem;
+    }
+
+    &-setting {
+        border-radius: 5% 5% 5% 5% ~"/" 5% 5% 5% 5%;
+        background-color: white;
+        box-shadow: 0px 40px 20px #978f87;
+    }
+    &-header {
+        text-align: center;
+    }
+
+    .levelSetting {
+        text-align: center;
+        &-header {
+            font-size: 3rem;
+        }
+
+        &-content {
+            font-size: 2rem;
+            color: @btn-color;
+        }
+        &-slider {
+            //text-align: center;
+            margin: 0;
+        }
+    }
+}
+//TODO: подправить красивоть ul-li
+// настройка арифм операций
+.arifmSetting {
+    margin-top: 7rem;
+    text-align: center;
+    &-header {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    &-op {
+        text-align: center;
+    }
+
+    &-choose {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0;
+        li {
+            text-align: left;
+            float: left;
+            width: 40%;
+            margin-left: 5rem;
+        }
+        span {
+            padding-left: 1rem;
+            font-size: 1.4rem;
+            line-height: 1.9rem;
+            color: #000;
+            white-space: normal;
+            vertical-align: top;
+        }
+    }
+    //кнопка начать
+}
+.start {
+    margin: 2rem 0;
+
+    &-btn {
+        background-color: @btn-color;
+        color: #fff;
+        font-size: 2.8rem;
+    }
+}
+//окно настроек справа
+.setting-right {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    border-radius: 10% 10% 10% 10% ~"/" 10% 10% 10% 10%;
+
+    box-shadow: 0px 20px 20px #978f87;
+    width: 50%;
+    height: 50%;
+    //высота 540 делим на 4, получаем margin-top
+    right: 0;
+    top: 50%;
+    margin-top: -140px;
+    //
+
+    text-align: center;
+    a {
+        margin-top: 1.5rem;
+        font-size: 2rem;
+        height: 4rem;
+    }
+
+    .btn-group-vertical {
+        margin-top: 1rem;
+
+        .btn {
+            margin-bottom: 0.5rem;
+            width: 10rem;
+            height: 3rem;
+            font-size: 1.4rem;
+        }
+    }
+
+    .competition {
+        position: fixed;
+        bottom: 1.5rem;
+        left: 67px;
+        margin-right: 50%;
+
+        button {
+            font-size: 2rem;
+            height: 4rem;
+        }
+    }
+}
+
+.tooltip-inner {
+    font-size: 1.5rem;
+    //background-color: @background-navbar-color;
+}
+
+//форма стандартного матча
+
+.fastMatch {
+    visibility: hidden;
+
+    &-space {
+        position: relative;
+        margin-bottom: 2rem;
+        background-color: white;
+        border-radius: 5% 5% 5% 5% ~"/" 10% 10% 10% 10%;
+        box-shadow: 0px 20px 20px #978f87;
+    }
+    &-example {
+        margin: 4rem 0 4rem 4rem;
+        font-size: 4rem;
+        text-align: center;
+        opacity: 0;
+    }
+
+    &-timer {
+        position: absolute;
+        margin-top: 1rem;
+        right: 0;
+        height: 5rem;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        p {
+            opacity: 0;
+            font-size: 4rem;
+            margin-top: 1.5rem;
+        }
+    }
+
+    &-input-group {
+        margin-bottom: 4rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .answer-form {
+            font-size: 2rem;
+            width: 20rem;
+        }
+        .skip {
+            position: absolute;
+            font-size: 1.5rem;
+            top: -35px;
+            cursor: pointer;
+            color: grey;
+            visibility: hidden;
+        }
+    }
+}
+
+//всплывающие окна из match
+
+.helperBottom {
+    //z-index: -1;
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    border-radius: 5% 5% 5% 5% ~"/" 30% 30% 30% 30%;
+    box-shadow: 0px 20px 20px #978f87;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    height: 5rem;
+    transition: 1s;
+
+    &-btn {
+        background-color: @btn-color;
+        color: white;
+    }
+
+    p {
+        margin-top: 0.7rem;
+        color: @btn-color;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    &:hover {
+        background-color: @btn-color;
+        transform: scale(1.1);
+        p {
+          color: white;
+          //  font-size: 2.2rem;
+        }
+      }
+}
+
+.helperLeft {
+   // z-index: -1;
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    border-radius: 10% 10% 10% 10% ~"/" 10% 10% 10% 10%;
+    box-shadow: 0px 20px 20px #978f87;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem;
+    transition: 0.5s;
+   
+    p {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 3rem;
+    }
+    &:hover {
+        background-color: @background-navbar-color;
+        transform: scale(1.1);
+    
+      }
+}
+
+.helperRight {
+    //z-index: -1;
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    border-radius: 10% 10% 10% 10% ~"/" 10% 10% 10% 10%;
+
+    box-shadow: 0px 20px 20px #978f87;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    transition: 0.5s;
+    text-align: center;
+    &-timer {
+        //opacity: 0;
+        font-size: 4rem;
+        margin-top: 3rem;
+    }
+
+    &-result {
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 3rem;
+        //display: flex;
+        //justify-content: center;
+    }
+    &-output {
+        //opacity: 0;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    &:hover {
+        background-color: @background-navbar-color;
+        transform: scale(1.1);
+    
+      }
+}
+
+//окно статистики
+.stat {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    background-color: #ffaa56;
+    border-radius: 10% 10% 10% 10% ~"/" 10% 10% 10% 10%;
+    box-shadow: 0px 20px 20px #978f87;
+
+    width: 100%;
+    bottom: -25rem;
+    right: 0;
+    height: 9rem;
+    transition: 1s;
+    height: 120%;
+    text-align: center;
+
+    &-head {
+        p {
+            font-size: 3rem;
+            margin-top: 1.5rem;
+        }
+    }
+    table {
+        .key {
+            float: left;
+        }
+        .value {
+            float: right;
+        }
+        td {
+            font-size: 2rem;
+            margin-left: 2rem;
+        }
+    }
+
+    &-full {
+        position: absolute;
+        bottom: 0;
+        left: -107px;
+        margin-left: 50%;
+        font-size: 2rem;
+        color: @btn-color;
+        cursor: pointer;
+    }
+}
+//модальное окно со статистикой
+
+.modal-body {
+    table {
+        text-align: center;
+        border-spacing: 5px;
+        border-collapse: separate;
+
+        th {
+            padding: 10px;
+            font-size: 16px;
+        }
+        td {
+            padding: 10px;
+            font-size: 15px;
+            
+        }
+        
+    }
+    &:hover {
+        background-color: @background-navbar-color;
+        transform: scale(1.1);
+    
+      }
+}
+
+//range slider
+
+// большая кнопка
+.rangeThumb() {
+    width: 18px;
+    height: 18px;
+    margin: -8px 0 0;
+    border-radius: 50%;
+    background: @btn-color;
+    cursor: pointer;
+    border: 0 !important;
+}
+
+//тонкая полоска
+.rangeTrack() {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: gray;
+}
+
+//толстая полоска
+.range {
+    position: relative;
+    width: 38rem;
+    margin-left: 8rem;
+    height: 5px;
+}
+
+.range input {
+    width: 100%;
+    position: absolute;
+    top: 2px;
+    height: 0;
+    -webkit-appearance: none;
+
+    // Thumb
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; // needed again for Chrome & Safari
+        .rangeThumb();
+    }
+
+    &::-moz-range-thumb {
+        .rangeThumb();
+    }
+
+    &::-ms-thumb {
+        .rangeThumb();
+    }
+
+    // Track
+    &::-webkit-slider-runnable-track {
+        .rangeTrack;
+    }
+
+    &::-moz-range-track {
+        .rangeTrack();
+    }
+
+    &::-ms-track {
+        .rangeTrack();
+    }
+
+    &:focus {
+        // override outline/background on focus
+        background: none;
+        outline: none;
+    }
+
+    &::-ms-track {
+        // A little somethin' somethin' for IE
+        width: 550px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+}
+
+// элементы UL-LI
+.range-labels {
+    //margin: 18px -41px 0;
+    //padding: 0;
+    margin-left: 4px;
+    list-style: none;
+
+    li {
+        position: relative;
+        float: left;
+        width: 90.25px;
+        text-align: center;
+        color: grey;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+
+        //маленькие точки на прямой
+        &::before {
+            position: absolute;
+            top: -18px;
+            content: "";
+            margin: 0 auto;
+            width: 9px;
+            height: 9px;
+            background: grey;
+            border-radius: 50%;
+        }
+    }
+
+    .active {
+        color: @btn-color;
+    }
+
+    .selected::before {
+        background: @btn-color;
+    }
+
+    .active.selected::before {
+        display: none;
+    }
+}
+
+//level switches
+.button-cover,
+.knobs,
+.layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+    border-radius: 100px;
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    background-color: #ffc7c7;
+
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+#button-1 .knobs:before {
+    content: "НЕТ";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 27px;
+    height: 27px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0.8;
+    padding: 9px 4px;
+    background-color: #f44336;
+
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked + .knobs:before {
+    content: "ДА";
+    left: 42px;
+    background-color: @btn-color;
+}
+
+#button-1 .checkbox:checked ~ .layer {
+    background-color: #d1f0fd;
+}
+
+#button-1 .knobs,
+#button-1 .knobs:before,
+#button-1 .layer {
+    transition: 0.3s ease all;
+}
+
+//сложение включено
+#button-2 .knobs::after {
+    content: "ДА";
+    position: absolute;
+    left: 42px;
+    top: 4px;
+    width: 27px;
+    height: 27px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0.8;
+    padding: 9px 4px;
+    background-color: @btn-color;
+
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-2 .checkbox:checked + .knobs:after {
+    content: "НЕТ";
+    left: 4px;
+    background-color: #f44336;
+}
+
+#button-2 .checkbox:checked ~ .layersum {
+    background-color: #ffc7c7;
+}
+
+#button-2 .knobs,
+#button-2 .knobs:before,
+#button-2 .layersum {
+    transition: 0.3s ease all;
+}
+
+.layersum {
+    width: 100%;
+    background-color: #d1f0fd;
+
+    z-index: 1;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 100px;
+    transition: 0.3s ease all;
+}
+
+//Анимации
+//скрытие setting
+.animate-setting {
+    animation-name: setting-move;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+//появление setting
+.animate-back-setting {
+    animation-name: setting-back;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+//появление fastMath
+.animate-fastMath {
+    animation-name: fastMatch-move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+//скрытие fastMath
+.animate-back-fastMath {
+    animation-name: fastMatch-back;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+//подсказка снизу
+.animate-helperBottom {
+    animation-name: helperBottom-fastMatch-move;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+//подсказка слева
+.animate-helperLeft {
+    animation-name: helperLeft-fastMatch-move;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+//подсказка справа
+.animate-helperRight {
+    animation-name: helperRight-fastMatch-move;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+//анимация появления right-helper
+.animate-settingStandardModes {
+    transition: 0.5s;
+    animation-name: settingRight-standardModes-move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+//статистика снизу
+.animate-stat {
+    animation-name: stat-fastMatch-move;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+//анимация окна настроек
+@keyframes setting-move {
+    0% {
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-200rem);
+    }
+}
+//анимация возвращения окна настроек
+@keyframes setting-back {
+    0% {
+        opacity: 0;
+        transform: translateX(-200rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+//анимация fastMath
+@keyframes fastMatch-move {
+    0% {
+        opacity: 0;
+        transform: translateY(-100rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-49.9rem);
+    }
+}
+//анимация ухода fastMath
+@keyframes fastMatch-back {
+    0% {
+        opacity: 1;
+        transform: translateY(-49.9rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100rem);
+    }
+}
+//анимация helperBottom
+@keyframes helperBottom-fastMatch-move {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        bottom: -5rem-@helperMargin;
+    }
+}
+//анимация helperLeft
+@keyframes helperLeft-fastMatch-move {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        left: -19rem-@helperMargin;
+    }
+}
+//анимация helperRight
+@keyframes helperRight-fastMatch-move {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        right: -19rem-@helperMargin;
+    }
+}
+
+//анимация settingRight Сразу с переходом на страницу режима
+@keyframes settingRight-standardModes-move {
+    0% {
+        //opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(28rem + @helperMargin);
+    }
+}
+//анимация stat
+@keyframes stat-fastMatch-move {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(11rem + @helperMargin);
+    }
+}
