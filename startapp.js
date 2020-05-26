@@ -28,6 +28,8 @@ const flash = require("connect-flash");
 
 //экспорт ключей
 const keys = require("./keys");
+const PORT = process.env.PORT || 8000
+
 const app = express();
 //ошибка 404
 const errorHandler = require("./middleware/error404");
@@ -98,8 +100,8 @@ async function start() {
     });
     console.log("Mongoose запущен");
 
-    app.listen(8000, () => {
-      console.log("Сервер запущен: 8000 ");
+    app.listen(PORT, () => {
+      console.log(`Сервер запущен: ${PORT} `);
     });
   } catch (error) {
     console.log("Ooops");
