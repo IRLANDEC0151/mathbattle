@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
     res.render("fastMatch", {
         title: "Быстрый матч",
         isFastMatch: true,
-        script: '/fastmatch.js',
+        script: '/fastMatch.js',
         style: '/fastMatch.css',
     });
 });
