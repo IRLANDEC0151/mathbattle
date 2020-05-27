@@ -1,0 +1,957 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:20:07
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |            .js|           1285|            189|            161|     15|
+   |          .json|           3568|              0|              1|     42|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .svg|             92|              0|              0|    1.1|
+   |           .css|           1212|              0|              1|     14|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:20:38
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |          .json|           3568|              0|              1|     42|
+   |            .js|           1285|            189|            161|     15|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .css|           1212|              0|              1|     14|
+   |           .svg|             92|              0|              0|    1.1|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:20:46
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |          .json|           3568|              0|              1|     42|
+   |            .js|           1285|            189|            161|     15|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .css|           1212|              0|              1|     14|
+   |           .svg|             92|              0|              0|    1.1|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:21:38
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |            .js|           1285|            189|            161|     15|
+   |          .json|           3568|              0|              1|     42|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .css|           1212|              0|              1|     14|
+   |           .svg|             92|              0|              0|    1.1|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:23:27
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |          .json|           3568|              0|              1|     42|
+   |            .js|           1285|            189|            161|     15|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .svg|             92|              0|              0|    1.1|
+   |           .css|           1212|              0|              1|     14|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:25:14
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |          .json|           3568|              0|              1|     42|
+   |            .js|           1285|            189|            161|     15|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .css|           1212|              0|              1|     14|
+   |           .svg|             92|              0|              0|    1.1|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:28:00
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |          .json|           3568|              0|              1|     42|
+   |            .js|           1285|            189|            161|     15|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .css|           1212|              0|              1|     14|
+   |           .svg|             92|              0|              0|    1.1|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:28:22
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |          .json|           3568|              0|              1|     42|
+   |            .js|           1285|            189|            161|     15|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .svg|             92|              0|              0|    1.1|
+   |           .css|           1212|              0|              1|     14|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:30:42
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |            .js|           1285|            189|            161|     15|
+   |          .json|           3568|              0|              1|     42|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .css|           1212|              0|              1|     14|
+   |           .svg|             92|              0|              0|    1.1|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-26 20:30:58
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8480
+total comment lines : 293
+total blank lines : 391
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.083|
+   |            .js|           1285|            189|            161|     15|
+   |          .json|           3568|              0|              1|     42|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .svg|             92|              0|              0|    1.1|
+   |           .css|           1212|              0|              1|     14|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 6, comment is 0, blank is 0.
+keys\keys.prod.js, code is 6, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3531, comment is 0, blank is 0.
+package.json, code is 37, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 184, comment is 14, blank is 10.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-05-27 20:38:42
+count workspace : c:\Users\IRLANDEC\Desktop\MathBattle\src
+total files : 64
+total code lines : 8604
+total comment lines : 293
+total blank lines : 394
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              7|              0|              0|  0.081|
+   |          .json|           3660|              0|              1|     43|
+   |            .js|           1317|            189|            164|     15|
+   |           .hbs|           1101|              0|             58|     13|
+   |           .css|           1212|              0|              1|     14|
+   |           .svg|             92|              0|              0|    1.1|
+   |          .less|           1215|            104|            170|     14|
+   -------------------------------------------------------------------------
+.gitignore, code is 3, comment is 0, blank is 0.
+.prettierrc, code is 4, comment is 0, blank is 0.
+emails\registration.js, code is 10, comment is 0, blank is 0.
+emails\reset.js, code is 12, comment is 0, blank is 1.
+images\2020-05-26T11-26-38.634Zdony.jpg, it is a binary file.
+images\2020-05-26T11-26-57.850Zavatarka.jpg, it is a binary file.
+images\2020-05-26T11-29-20.553Zdony.jpg, it is a binary file.
+keys\index.js, code is 5, comment is 1, blank is 1.
+keys\keys.dev.js, code is 7, comment is 0, blank is 0.
+keys\keys.prod.js, code is 7, comment is 0, blank is 0.
+middleware\auth.js, code is 12, comment is 0, blank is 1.
+middleware\error404.js, code is 5, comment is 0, blank is 0.
+middleware\file.js, code is 21, comment is 0, blank is 4.
+middleware\user.js, code is 8, comment is 0, blank is 2.
+middleware\validators.js, code is 78, comment is 0, blank is 5.
+middleware\variables.js, code is 5, comment is 0, blank is 0.
+models\statisticsModes.js, code is 26, comment is 0, blank is 1.
+models\user.js, code is 28, comment is 0, blank is 1.
+package-lock.json, code is 3622, comment is 0, blank is 0.
+package.json, code is 38, comment is 0, blank is 1.
+public\css\fastMatch.css, code is 508, comment is 0, blank is 0.
+public\css\main.css, code is 24, comment is 0, blank is 0.
+public\css\modes.css, code is 32, comment is 0, blank is 1.
+public\css\navbar.css, code is 19, comment is 0, blank is 0.
+public\css\standardModes.css, code is 629, comment is 0, blank is 0.
+public\img\chain.svg, code is 37, comment is 0, blank is 0.
+public\img\checkmark.svg, code is 2, comment is 0, blank is 0.
+public\img\choise.svg, code is 1, comment is 0, blank is 0.
+public\img\math.svg, code is 1, comment is 0, blank is 0.
+public\img\multi.svg, code is 2, comment is 0, blank is 0.
+public\img\standard.svg, code is 46, comment is 0, blank is 0.
+public\img\timer.svg, code is 1, comment is 0, blank is 0.
+public\img\training.svg, code is 1, comment is 0, blank is 0.
+public\img\wrong.svg, code is 1, comment is 0, blank is 0.
+public\js\auth.js, code is 0, comment is 2, blank is 0.
+public\js\fastMatch.js, code is 266, comment is 67, blank is 45.
+public\js\standardModes.js, code is 420, comment is 78, blank is 55.
+public\less\fastMatch.less, code is 503, comment is 41, blank is 72.
+public\less\main.less, code is 25, comment is 3, blank is 1.
+public\less\modes.less, code is 33, comment is 1, blank is 5.
+public\less\navbar.less, code is 21, comment is 2, blank is 4.
+public\less\standardModes.less, code is 633, comment is 57, blank is 88.
+routes\auth.js, code is 214, comment is 14, blank is 13.
+routes\fastMatch.js, code is 11, comment is 1, blank is 2.
+routes\home.js, code is 8, comment is 1, blank is 4.
+routes\leaderboard.js, code is 9, comment is 1, blank is 2.
+routes\modes.js, code is 10, comment is 1, blank is 5.
+routes\modes\standardModes.js, code is 36, comment is 1, blank is 4.
+routes\profile.js, code is 34, comment is 2, blank is 9.
+startapp.js, code is 85, comment is 20, blank is 9.
+views\404.hbs, code is 3, comment is 0, blank is 0.
+views\auth\login.hbs, code is 143, comment is 0, blank is 4.
+views\auth\password.hbs, code is 31, comment is 0, blank is 1.
+views\auth\reset.hbs, code is 31, comment is 0, blank is 2.
+views\fastMatch.hbs, code is 140, comment is 0, blank is 8.
+views\home.hbs, code is 1, comment is 0, blank is 0.
+views\layouts\main.hbs, code is 7, comment is 0, blank is 4.
+views\leaderboard.hbs, code is 1, comment is 0, blank is 0.
+views\modes.hbs, code is 221, comment is 0, blank is 9.
+views\modes\standardModes.hbs, code is 354, comment is 0, blank is 12.
+views\partials\footer.hbs, code is 5, comment is 0, blank is 1.
+views\partials\head.hbs, code is 22, comment is 0, blank is 1.
+views\partials\navbar.hbs, code is 107, comment is 0, blank is 11.
+views\profile.hbs, code is 35, comment is 0, blank is 5.
+===============================================================================
