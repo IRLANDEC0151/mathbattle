@@ -3,4 +3,5 @@ module.exports = {
   SECRET_SESSION: process.env.SECRET_SESSION,
   EMAIL_FROM: process.env.EMAIL_FROM,
   BASE_URL: process.env.BASE_URL,
+  SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
 };

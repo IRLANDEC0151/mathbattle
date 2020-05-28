@@ -3,24 +3,16 @@ const bcrypt = require("bcryptjs");
 const router = Router();
 const User = require("../models/user");
 const auth = require("../middleware/auth");
-const nodemailer = require("nodemailer");
-const sendgrid=require('nodemailer-sendgrid-transport')
-const mailGun = require("nodemailer-mailgun-transport");
 const regEmail = require("../emails/registration");
+const sgMail = require("@sendgrid/mail");
 const crypto = require("crypto");
 const resetEmail = require("../emails/reset");
-const mailgun = require("mailgun-js");
-const { validationResult } = require("express-validator"); 
+const keys = require("../keys");
+const { validationResult } = require("express-validator");
 const { registerValidators } = require("../middleware/validators");
 const { loginValidators } = require("../middleware/validators");
 const { resetValidators } = require("../middleware/validators");
-// const mg = mailgun({
-//   apiKey: "5480804fcb699ec2eb4ae44c4cc8b408-e5e67e3e-0e9122f9",
-//   domain: "sandbox3856edfc68644f6184da0c6f32d41337.mailgun.org",
-// });
-
-const  sgMail  =  require ( '@sendgrid/mail' ) ;
-sgMail.setApiKey('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');
+sgMail.setApiKey(keys.SENDGRID_API_KEY);
 //переход на страницу логина
 router.get("/login", auth.profile, (req, res) => {
   //рендерим эту страницу
@@ -67,7 +59,6 @@ router.post("/login", loginValidators, async (req, res) => {
 router.post("/register", registerValidators, async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    //существует ли пользователь?
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       req.flash("registerError", errors.array()[0].msg);
@@ -76,14 +67,12 @@ router.post("/register", registerValidators, async (req, res) => {
         isLogin: true,
         loginError: req.flash("loginError"),
         registerError: req.flash("registerError"),
-        script: "/auth.js",
         dataInput: {
-          name: req.body.name,
-          email: req.body.email,
+          name: name,
+          email: email,
         },
       });
     }
-
     const hashPassword = await bcrypt.hash(password, 12);
     const user = new User({
       email,
@@ -93,21 +82,13 @@ router.post("/register", registerValidators, async (req, res) => {
     });
     await user.save();
     //отправка письма пользователю
-    // await transporter.sendMail(regEmail(email));
-    const msg = {
-      to: email,
-      from: 'katkov.syy@gmail.com',
-      subject: 'Sending with Twilio SendGrid is Fun',
-      text: 'and easy to do anywhere, even with Node.js',
-      html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-    };
-     await sgMail.send(msg);
-    // await mg.messages().send(regEmail(email), function (error, body) {
-    //   console.log(body);
-    // });
-    req.flash('completeRegister','Письмо с подтверждением отправлено на почту')
-    console.log("отправилось ПИСЬМО");
+    await sgMail.send(regEmail(email));
 
+    req.flash(
+      "completeRegister",
+      "Письмо с подтверждением отправлено на почту"
+    );
+    console.log("отправилось ПИСЬМО");
     res.redirect("/auth/login#login");
   } catch (error) {
     console.log("Ooops...Регистрация провалена...");
@@ -148,16 +129,14 @@ router.post("/reset", resetValidators, (req, res) => {
         return res.redirect("/auth/reset");
       }
       const candidate = await User.findOne({ email: req.body.email });
-      const token = buffer.toString("hex");  
-      candidate.resetToken = token; 
+      const token = buffer.toString("hex");
+      candidate.resetToken = token;
       candidate.resetTokenExp = Date.now() + 60 * 60 * 1000;
       await candidate.save();
       //отправка письма пользователю для восстановления пароля
-      await mg
-        .messages()
-        .send(resetEmail(candidate.email, token), function (error, body) {
-          console.log(body);
-        });
+      await sgMail.send(resetEmail(candidate.email, token)); 
+     console.log('Письмо для сброса пароля отправлено');
+     
       res.redirect("/auth/login");
     });
   } catch (error) {
