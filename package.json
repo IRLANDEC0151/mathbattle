@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
+    "@sendgrid/mail": "^7.1.1",
     "animate.css": "^3.7.2",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
