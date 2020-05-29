@@ -13,6 +13,7 @@ const { registerValidators } = require("../middleware/validators");
 const { loginValidators } = require("../middleware/validators");
 const { resetValidators } = require("../middleware/validators");
 sgMail.setApiKey(keys.SENDGRID_API_KEY);
+
 //переход на страницу логина
 router.get("/login", auth.profile, (req, res) => {
   //рендерим эту страницу
@@ -20,9 +21,18 @@ router.get("/login", auth.profile, (req, res) => {
     title: "Войти",
     isLogin: true,
     loginError: req.flash("loginError"),
+    style: "/login.css",
+  });
+});
+//переход на страницу регистрации
+router.get("/register", auth.profile, (req, res) => {
+  //рендерим эту страницу
+  res.render("auth/register", {
+    title: "Регистрация",
+    isLogin: true,
     registerError: req.flash("registerError"),
     completeRegister: req.flash("completeRegister"),
-    script: "/auth.js",
+    style: "/register.css",
   });
 });
 
@@ -36,8 +46,8 @@ router.post("/login", loginValidators, async (req, res) => {
         title: "Войти",
         isLogin: true,
         loginError: req.flash("loginError"),
-        registerError: req.flash("registerError"),
         script: "/auth.js",
+        style: "/login.css",
         dataInput: {
           email: req.body.email,
         },
@@ -62,10 +72,10 @@ router.post("/register", registerValidators, async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       req.flash("registerError", errors.array()[0].msg);
-      return res.status(422).render("auth/login", {
-        title: "Войти",
+      return res.status(422).render("auth/register", {
+        title: "Регистрация",
         isLogin: true,
-        loginError: req.flash("loginError"),
+        style: "/register.css",
         registerError: req.flash("registerError"),
         dataInput: {
           name: name,
@@ -84,12 +94,17 @@ router.post("/register", registerValidators, async (req, res) => {
     //отправка письма пользователю
     await sgMail.send(regEmail(email));
 
-    req.flash(
-      "completeRegister",
-      "Письмо с подтверждением отправлено на почту"
-    );
     console.log("отправилось ПИСЬМО");
-    res.redirect("/auth/login#login");
+      req.flash(
+        "completeRegister",
+        "Письмо с подтверждением отправлено на почту"
+      );
+    res.render("auth/register", {
+      title: "Регистрация",
+      isLogin: true,
+      style: "/register.css",
+      completeRegister: req.flash("completeRegister"),
+    });
   } catch (error) {
     console.log("Ooops...Регистрация провалена...");
     console.log(error);
@@ -134,9 +149,9 @@ router.post("/reset", resetValidators, (req, res) => {
       candidate.resetTokenExp = Date.now() + 60 * 60 * 1000;
       await candidate.save();
       //отправка письма пользователю для восстановления пароля
-      await sgMail.send(resetEmail(candidate.email, token)); 
-     console.log('Письмо для сброса пароля отправлено');
-     
+      await sgMail.send(resetEmail(candidate.email, token));
+      console.log("Письмо для сброса пароля отправлено");
+
       res.redirect("/auth/login");
     });
   } catch (error) {

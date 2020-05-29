@@ -7,7 +7,7 @@ exports.registerValidators = [
     .trim()
     .isLength({ min: 2 })
     .withMessage(
-      "Имя должно быть не короче 2 символов и содержать только буквы и цифры"
+      "Имя должно содержать только буквы и цифры"
     ),
   body("email")
     .isEmail()
@@ -25,7 +25,7 @@ exports.registerValidators = [
     .normalizeEmail(),
   body(
     "password",
-    "Длина пароля должна быть не меньше 6 символов"
+    "Слишком короткий пароль"
   )
     .isLength({ min: 6, max: 30 })
     .isAlphanumeric()
@@ -39,7 +39,7 @@ exports.registerValidators = [
 ];
 exports.loginValidators = [
   body("email")
-    .custom(async (value, req) => {
+    .custom(async (value) => {
       try {
         const candidate = await User.findOne({ email: value });
         if (!candidate) {
@@ -51,10 +51,14 @@ exports.loginValidators = [
     })
     .normalizeEmail(),
   body("password")
-    .custom(async (value, { req }) => {
+    .custom(async (value, { req }) => { 
       try {
         const candidate = await User.findOne({ email: req.body.email });
+        if (!candidate) {
+          return Promise.reject("Неверный email или пароль");
+        }
         const pass = await bcrypt.compare(value, candidate.password);
+        
         if (!pass) {
           return Promise.reject("Неверный email или пароль");
         }

@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 offset-xl-3">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a
+            class="nav-item nav-link active"
+            id="nav-home-tab"
+            data-toggle="tab"
+            href="#login"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
+            >Войти</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="nav-profile-tab"
+            data-toggle="tab"
+            href="#register"
+            role="tab"
+            aria-controls="nav-profile"
+            aria-selected="false"
+            >Регистрация</a
+          >
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="login"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+        >
+          {{#if loginError}}
+          <p class="errorLogin">{{loginError}}</p>
+          {{/if}}
+
+          <form action="/auth/login" method="POST">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ваш email</label>
+              <input
+                name="email"
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                value="{{dataInput.email}}"
+                required
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >Мы никому не передадим ваши данные</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="password">Пароль</label>
+              <input
+                name="password"
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+            <input type="hidden" name="_csrf" value="{{csrf}}" />
+            <p><a href="/auth/reset">Забыли пароль?</a></p>
+            <button type="submit" class="btn btn-primary">
+              Войти
+            </button>
+          </form>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="register"
+          role="tabpanel"
+          aria-labelledby="nav-profile-tab"
+        >
+          {{#if registerError}}
+          <p class="errorLogin">{{registerError}}</p>
+          {{/if}} {{#if completeRegister}}
+          <p class="completeRegister">{{completeRegister}}</p>
+          {{/if}}
+          <form action="/auth/register" method="POST">
+            <div class="form-group">
+              <label for="name">Ваше имя</label>
+              <input
+                name="name"
+                type="text"
+                class="form-control"
+                id="name"
+                value="{{dataInput.name}}"
+                required
+              />
+              <small id="remailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="remail">Ваш email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="remail"
+                aria-describedby="emailHelp"
+                value="{{dataInput.email}}"
+                required
+              />
+              <small id="remail" class="form-text text-muted"
+                >Мы никому не передадим ваши данные</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="rpassword">Пароль</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                id="rpassword"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirm">Еще раз пароль</label>
+              <input
+                type="password"
+                name="confirm"
+                class="form-control"
+                id="confirm"
+                required
+              />
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrf}}" />
+            <button type="submit" class="btn btn-primary">
+              Зарегистрироваться
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

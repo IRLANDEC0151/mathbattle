@@ -1,0 +1,127 @@
+.container {
+  max-width: 980px;
+}
+.register {
+  border-radius: 5% 5% 5% 5% / 10% 10% 10% 10%;
+  box-shadow: 0px 20px 20px #978f87;
+  background-image: linear-gradient(to left, #ffdcc7, #ffd5b8, #ffcea8, #ffc899, #ffc189, #ffba7a, #febe76, #fdc272, #fdc66e, #fcc969, #fbcd65, #fad161);
+  margin-top: 5rem;
+}
+.register-head {
+  margin: 4rem 0 1rem 0;
+}
+.register-head p {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 5rem;
+  text-align: center;
+  color: #3f3e3e;
+}
+.register-body {
+  text-align: center;
+}
+.register-body a {
+  font-size: 2rem;
+  color: #8b7a67;
+  text-decoration: none;
+}
+.register-img {
+  margin: 2.5rem auto 0 auto;
+  text-align: center;
+}
+.register-img img {
+  width: 35rem;
+  height: 35rem;
+}
+.register-img p {
+  margin-top: 5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  color: #05739e;
+}
+.register-button {
+  background-color: #ff9800;
+  margin: 3rem auto 1rem auto;
+  position: relative;
+  border-radius: 35px;
+  width: 80%;
+}
+.register-button button {
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  height: 5rem;
+  width: 100%;
+  border: none;
+  outline: none !important;
+  background-color: transparent;
+}
+.register-input {
+  background-color: transparent;
+  font-size: 2rem;
+  width: 100%;
+  height: 4rem;
+  line-height: 1.5;
+  padding: 0 30px 0 68px;
+  outline: none;
+  border: none;
+}
+.register-input:focus + span {
+  padding-left: 25px;
+}
+.register-input:focus + span img {
+  height: 25px;
+  width: 25px;
+}
+.form-group {
+  margin: 1.5rem auto;
+  position: relative;
+  background-color: #e6e6e6;
+  border-radius: 35px;
+  width: 80%;
+}
+.form-group span {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  padding-left: 35px;
+  pointer-events: none;
+  bottom: 0;
+  transition: all 0.5s;
+}
+.form-group span img {
+  height: 20px;
+  width: 20px;
+  transition: all 0.1s;
+}
+.already-login {
+  background-color: #05739e;
+  margin: 0 auto 3rem auto;
+  border-radius: 35px;
+  width: 60%;
+}
+.already-login button {
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  height: 5rem;
+  width: 100%;
+  border: none;
+  outline: none !important;
+  background-color: transparent;
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
