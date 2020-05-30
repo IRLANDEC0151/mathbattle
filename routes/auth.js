@@ -95,10 +95,10 @@ router.post("/register", registerValidators, async (req, res) => {
     await sgMail.send(regEmail(email));
 
     console.log("отправилось ПИСЬМО");
-      req.flash(
-        "completeRegister",
-        "Письмо с подтверждением отправлено на почту"
-      );
+    req.flash(
+      "completeRegister",
+      "Письмо с подтверждением отправлено на почту"
+    );
     res.render("auth/register", {
       title: "Регистрация",
       isLogin: true,
@@ -116,15 +116,14 @@ router.get("/reset", auth.profile, async (req, res) => {
   try {
     res.render("auth/reset", {
       title: "Восстановление пароля",
+      style: "/reset.css",
       error: req.flash("error"),
     });
   } catch (error) {
     console.log(error);
   }
 });
-//пользователь вводит email для восстановаления,
-//ему отправляется письмо
-//он переходит в окно логина
+
 router.post("/reset", resetValidators, (req, res) => {
   try {
     const errors = validationResult(req);
@@ -132,6 +131,7 @@ router.post("/reset", resetValidators, (req, res) => {
       req.flash("error", errors.array()[0].msg);
       return res.status(422).render("auth/reset", {
         title: "Восстановление пароля",
+        style: "/reset.css",
         error: req.flash("error"),
         dataInput: {
           email: req.body.email,
@@ -151,8 +151,17 @@ router.post("/reset", resetValidators, (req, res) => {
       //отправка письма пользователю для восстановления пароля
       await sgMail.send(resetEmail(candidate.email, token));
       console.log("Письмо для сброса пароля отправлено");
+      req.flash("completeReset", "Письмо для восстановления отправлено");
+      res.render("auth/reset", {
+        title: "Восстановление пароля",
+        style: "/reset.css", 
+        error: req.flash("error"),
+        completeRegister: req.flash("completeReset"),
 
-      res.redirect("/auth/login");
+        dataInput: {
+          email: req.body.email,
+        },
+      });
     });
   } catch (error) {
     console.log(error);
@@ -164,7 +173,7 @@ router.get("/password/:token", auth.profile, async (req, res) => {
   if (!req.params.token) {
     console.log("нет токена");
 
-    return res.redirect("auth/login");
+    return res.redirect("auth/reset");
   }
   try {
     const user = await User.findOne({
@@ -174,7 +183,7 @@ router.get("/password/:token", auth.profile, async (req, res) => {
     if (!user) {
       console.log("нет user");
 
-      return res.redirect("auth/login");
+      return res.redirect("auth/reset");
     } else {
       res.render("auth/password", {
         title: "Восстановить доступ",
@@ -191,17 +200,26 @@ router.get("/password/:token", auth.profile, async (req, res) => {
 //пользователь вводит новый пароль и переходит в окно логина
 router.post("/password", async (req, res) => {
   try {
+    //сначала проверяем правильность пароля
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      req.flash("registerError", errors.array()[0].msg);
+      return res.status(422).render("/password/:token", {
+        title: "Восстановление пароля",
+        registerError: req.flash("registerError"),
+      });
+    }
     const user = await User.findOne({
       _id: req.body.userId,
       resetToken: req.body.token,
       resetTokenExp: { $gt: Date.now() },
-    });
+    }); 
     if (user) {
       user.password = await bcrypt.hash(req.body.password, 10);
       user.resetToken = undefined;
       user.resetTokenExp = undefined;
       await user.save();
-      res.redirect("/auth/login");
+      res.redirect("/auth/login"); 
     } else {
       req.flash("error", "Время жизни токена истекло");
       res.redirect("/auth/login");

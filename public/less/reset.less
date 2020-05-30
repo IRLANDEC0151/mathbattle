@@ -1,0 +1,138 @@
+.container {
+  max-width: 980px;
+}
+.register {
+  border-radius: 5% 5% 5% 5% ~"/" 10% 10% 10% 10%;
+  box-shadow: 0px 20px 20px #978f87;
+  background-image: linear-gradient(
+    to right,
+    rgb(112, 200, 235),
+    rgb(125, 201, 225),
+    rgb(138, 202, 216),
+    rgb(151, 203, 206),
+    rgb(164, 204, 197),
+    rgb(177, 205, 187),
+    rgb(190, 206, 178),
+    rgb(203, 207, 168),
+    rgb(216, 208, 159),
+    rgb(229, 209, 149),
+    rgb(242, 210, 140),
+    rgb(255, 211, 130)
+  );
+  margin-top: 5rem;
+  &-head {
+    margin: 4rem 0 1rem 0;
+    .head-text{
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      font-size: 5rem;
+      text-align: center;
+      color: rgb(63, 62, 62);
+    }
+
+    .reset-text{
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+      color: rgb(63, 62, 62);
+    }
+  }
+  &-img {
+    margin: 2.5rem auto 0 auto;
+    text-align: center;
+    img {
+      width: 35rem;
+      height: 35rem;
+    }
+  }
+
+  &-button {
+    background-color: #57b846;
+    margin: 3rem auto 6rem auto;
+    position: relative;
+    border-radius: 35px;
+    width: 80%;
+    button {
+      align-items: center;
+      font-size: 2rem;
+      color: white;
+      height: 5rem;
+      width: 100%;
+      border: none;
+      outline: none !important;
+      background-color: transparent;
+    }
+  }
+}
+
+.register-input {
+  background-color: transparent;
+  font-size: 2rem;
+  width: 100%;
+  height: 4rem;
+  line-height: 1.5;
+  padding: 0 30px 0 68px;
+  outline: none;
+  border: none;
+  &:focus + span {
+    padding-left: 25px;
+    img {
+      height: 25px;
+      width: 25px;
+    }
+  }
+}
+
+.form-group {
+  margin: 1.5rem auto;
+  position: relative;
+  background-color: #e6e6e6;
+  border-radius: 35px;
+  width: 80%;
+
+  span {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    padding-left: 35px;
+    pointer-events: none;
+    bottom: 0;
+    transition: all 0.5s;
+    img {
+      height: 20px;
+      width: 20px;
+      transition: all 0.1s;
+    }
+  }
+}
+
+.already-login {
+  background-color: #05739e;
+  margin: 0 auto 3rem auto;
+  border-radius: 35px;
+  width: 60%;
+  button {
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    height: 5rem;
+    width: 100%;
+    border: none;
+    outline: none !important;
+    background-color: transparent;
+  }
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}

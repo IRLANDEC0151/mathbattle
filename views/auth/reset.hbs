@@ -1,33 +1,53 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xl-6 offset-xl-3">
-     
-      <h1>Забыли пароль?</h1>
-       {{#if error}}
-      <p class="errorLogin">{{error}}</p>
-      {{/if}}
-      <form action="/auth/reset" method="POST">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Ваш email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            aria-describedby="emailHelp"
-            value="{{dataInput.email}}"
-            required
-          />
-          <small id="emailHelp" class="form-text text-muted"
-            >Мы никому не передадим ваши данные</small
-          >
+  <div class="register">
+    <div class="row justify-content-md-center">
+      <div class="col-xl-5 offset-xl-0">
+        <div class="register-img">
+          <img src="/key.svg" alt="register-img" />
         </div>
        
-        <input type="hidden" name="_csrf" value="{{csrf}}" />
-        <button type="submit" class="btn btn-primary">
-          Сбросить пароль
-        </button>
-      </form>
+      </div>
+      <div class="col-xl-6">
+        <div class="register-form">
+          <div class="register-head">
+            <p class="head-text">Забыли пароль?</p>
+            <p class="reset-text">Введите ваш email. Мы отправим письмо для восстановления  аккаунта</p>
+          </div>
+
+          <div class="error" style="height: 4rem;">
+
+          {{#if error}}
+               <p class="errorLogin">{{error}}</p>
+          {{/if}}
+
+           {{#if completeRegister}}
+               <p class="completeRegister">{{completeRegister}}</p>
+          {{/if}}
+          </div>
+
+          <div class="register-body">
+            <form action="/auth/reset" method="POST">
+              {{!-- input email --}}
+              <div class="form-group">
+                <input
+                  name="email"
+                  type="email"
+                  class="register-input"
+                  placeholder="email"
+                  value='{{dataInput.email}}'
+                  required
+                />
+                <span> <img src="/mail.svg" alt="register-img" /></span>
+              </div>
+              {{!-- input password --}}
+              <input type="hidden" name="_csrf" value="{{csrf}}" />
+              <div class="register-button">
+                <button type="submit" class="">Восстановить доступ</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </div>
