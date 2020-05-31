@@ -486,7 +486,7 @@ function showStat() {
     skipBtn.style.display = "none";
     document.querySelector(".stat").classList.add("animate-stat");
     timeStat();
-    FastMatch.percentageOfCorrectAnswers=Math.trunc((FastMatch.correctExаmple / FastMatch.allExаmple) * 100)
+    FastMatch.percentageOfCorrectAnswers=Math.round((FastMatch.correctExаmple / FastMatch.allExаmple) * 100)
     document.querySelector(".statAll").textContent = FastMatch.allExаmple;
     document.querySelector(".statRight").textContent =
         FastMatch.correctExаmple +
@@ -512,7 +512,7 @@ function timeStat() {
             sum /
             timeForExample.length /
             1000
-        ).toPrecision(2);
+        ).toFixed(2);
     }
     console.log(timeForExample);
     timeForExample = [];

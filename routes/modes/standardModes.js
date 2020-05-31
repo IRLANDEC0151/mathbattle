@@ -17,40 +17,46 @@ router.get("/standardModes", (req, res) => {
 router.post("/standardModes", async (req, res) => {
   try {
     const candidate = await User.findOne({ email: req.user.email });
+    let stat = await Statistic.findOne({ userId: req.user });
 
-    if (candidate.userStatistic != null) {
+    if (!stat) {
       console.log("статистики еще нет у user");
-        createUserStatistic(candidate);
+      await createUserStatistic(candidate);
+      stat = await Statistic.findOne({ userId: req.user });
     }
 
     //запись статистики матча
-    writeMatch(candidate)
-    
-    
-    res.json(req.user);
-  } catch (error) {
+    arithmeticMean(stat, req);
+  } catch (error) { 
     console.log(error);
   }
 });
 
-module.exports = router;
-
-async function writeMatch(candidate) {
+//запись статистика матча
+async function arithmeticMean(stat, req) {
   try {
-
-
-  await candidate.save();
-  console.log("запись статистики матча успешно");
-
+    if (stat.modes[0].allGames == undefined) {
+      stat.modes[0].allGames = 0;
+      stat.modes[0].allExample = 0;
+      stat.modes[0].allCorrectExample = 0;
+      stat.modes[0].allTimeMiddleExample = 0;
+    }
+    stat.modes[0].allGames += 1;
+    stat.modes[0].allExample += +req.body.allExample;
+    stat.modes[0].allCorrectExample += +req.body.correctExample;
+    stat.modes[0].allTimeMiddleExample = (
+      stat.modes[0].allTimeMiddleExample + +req.body.timeMiddleExample
+    ).toFixed(2);
+    await stat.save();
+    console.log("Статистика матча записана");
   } catch (error) {
     console.log(error);
   }
 }
-
 //создание статистики для пользователя
 async function createUserStatistic(candidate) {
   const userStat = new Statistic({
-    modes: [],
+    modes: [{ name: "standardMode" }, { name: "chainMode" }],
     userId: candidate._id,
   });
   await userStat.save();
@@ -58,3 +64,12 @@ async function createUserStatistic(candidate) {
   await candidate.save();
   console.log("создание статистики прошло успешно");
 }
+
+function isEmpty(obj) {
+  for (let key in obj) {
+    // если тело цикла начнет выполняться - значит в объекте есть свойства
+    return false;
+  }
+  return true;
+}
+module.exports = router;

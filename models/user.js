@@ -24,11 +24,4 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.methods.addToStatistics = function (statistic) {
-  //   this.statistics.items.push({
-  //     statisticsModesId: statistic._id,
-  //   });
-  return this.save();
-};
-
 module.exports = model("User", userSchema);

@@ -29,7 +29,7 @@ router.get("/register", auth.profile, (req, res) => {
   //рендерим эту страницу
   res.render("auth/register", {
     title: "Регистрация",
-    isLogin: true,
+    isRegister: true,
     registerError: req.flash("registerError"),
     completeRegister: req.flash("completeRegister"),
     style: "/register.css",

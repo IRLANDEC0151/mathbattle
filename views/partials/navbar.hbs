@@ -89,25 +89,44 @@
 
                                     {{/if}}
                             {{else}}
-
-                                    {{#if  isLogin}}
+                                       {{#if  isRegister}}
                                         <li class="nav-item active">
                                             <a
                                                 class="nav-link block-text font-weight-bold"
-                                                href="/auth/login"
-                                                >Войти в профиль</a
+                                                href="/auth/register"
+                                                >Регистрация</a
                                             >
                                         </li>
                                     {{else}}
                                         <li class="nav-item">
                                             <a
                                                 class="nav-link block-text font-weight-bold"
-                                                href="/auth/login"
-                                                >Войти в профиль</a
+                                                href="/auth/register"
+                                                >Регистрация</a
                                             >
                                         </li>
 
                                     {{/if}}
+
+                                    {{#if  isLogin}}
+                                        <li class="nav-item active">
+                                            <a
+                                                class=" logIn nav-link block-text font-weight-bold "
+                                                href="/auth/login"
+                                                >Войти</a
+                                            >
+                                        </li>
+                                    {{else}}
+                                        <li class="nav-item">
+                                            <a
+                                                class=" logIn nav-link block-text font-weight-bold "
+                                                href="/auth/login"
+                                                >Войти</a
+                                            >
+                                        </li>
+
+                                    {{/if}} 
+                                   
 
                             
                             {{/if}}
