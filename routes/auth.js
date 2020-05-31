@@ -88,7 +88,6 @@ router.post("/register", registerValidators, async (req, res) => {
       email,
       name,
       password: hashPassword,
-      statistics: { items: [] },
     });
     await user.save();
     //отправка письма пользователю

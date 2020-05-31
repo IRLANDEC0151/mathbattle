@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const User = require("../../models/user");
-const StatisticsModes = require("../../models/statisticsModes");
+const Statistic = require("../../models/statistic");
 
 router.get("/standardModes", (req, res) => {
   //рендерим эту страницу
@@ -16,10 +16,18 @@ router.get("/standardModes", (req, res) => {
 
 router.post("/standardModes", async (req, res) => {
   try {
-    if (req.session.isAuthenticated) {
-      await writeMatchStatistics(req);
-      console.log("записалось");
+    const candidate = await User.findOne({ email: req.user.email });
+
+    if (candidate.userStatistic != null) {
+      console.log("статистики еще нет у user");
+        createUserStatistic(candidate);
     }
+
+    //запись статистики матча
+    writeMatch(candidate)
+    
+    
+    res.json(req.user);
   } catch (error) {
     console.log(error);
   }
@@ -27,15 +35,26 @@ router.post("/standardModes", async (req, res) => {
 
 module.exports = router;
 
-async function writeMatchStatistics(req) {
-  const statStandardModes = new StatisticsModes({
-    standardMode: {
-      allExample: req.body.allExample,
-      correctExample: req.body.correctExample,
-      percentageOfCorrectAnswers: req.body.percentageOfCorrectAnswers,
-      timeMiddleExample: req.body.timeMiddleExample,
-    },
-    userId: req.user,
+async function writeMatch(candidate) {
+  try {
+
+
+  await candidate.save();
+  console.log("запись статистики матча успешно");
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//создание статистики для пользователя
+async function createUserStatistic(candidate) {
+  const userStat = new Statistic({
+    modes: [],
+    userId: candidate._id,
   });
-  await statStandardModes.save();
+  await userStat.save();
+  candidate.userStatistic = { statisticId: userStat };
+  await candidate.save();
+  console.log("создание статистики прошло успешно");
 }

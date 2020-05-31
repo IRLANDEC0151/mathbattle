@@ -1,1 +1,7 @@
 <h1>Таблица лидеров</h1>
+<form action="/leaderboard/scores" method="POST">
+              <input type="hidden" name="_csrf" value="{{csrf}}" />
+
+<button type="submit">получить список лидеров</button>
+
+</form>
