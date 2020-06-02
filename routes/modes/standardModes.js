@@ -2,7 +2,7 @@ const { Router } = require("express");
 const router = Router();
 const User = require("../../models/user");
 const Statistic = require("../../models/statistic");
-
+const fetch=require('node-fetch')
 router.get("/standardModes", (req, res) => {
   //рендерим эту страницу
   res.render("modes/standardModes", {
@@ -32,6 +32,14 @@ router.post("/standardModes", async (req, res) => {
   }
 });
 
+
+router.post('/standardModes/stat',(req, res) => {
+  console.log('записано в бд');
+  console.log(req.body);
+  console.log(req.params);
+  
+} )
+
 //запись статистика матча
 async function arithmeticMean(stat, req) {
   try {
@@ -50,7 +58,7 @@ async function arithmeticMean(stat, req) {
     await stat.save();
     console.log("Статистика матча записана");
   } catch (error) {
-    console.log(error);
+    console.log(error); 
   }
 }
 //создание статистики для пользователя
@@ -64,7 +72,7 @@ async function createUserStatistic(candidate) {
   await candidate.save();
   console.log("создание статистики прошло успешно");
 }
-
+ 
 function isEmpty(obj) {
   for (let key in obj) {
     // если тело цикла начнет выполняться - значит в объекте есть свойства

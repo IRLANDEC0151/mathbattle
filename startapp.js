@@ -22,7 +22,7 @@ const fileMiddleWare = require("./middleware/file");
 //mongoose
 const mongoose = require("mongoose");
 //для защиты frontend
-const csrf = require("csurf");
+//const csrf = require("csurf");
 //для ошибок в auth
 const flash = require("connect-flash");
 
@@ -76,7 +76,7 @@ app.use(
   })
 );
 app.use(fileMiddleWare.single("avatar"));
-app.use(csrf());
+//app.use(csrf());
 app.use(flash());
 app.use(helmet())
 app.use(compression()) 
@@ -98,12 +98,12 @@ async function start() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Mongoose запущен");
+    console.log("Mongoose запущен"); 
 
     app.listen(PORT, () => {
       console.log(`Сервер запущен: ${PORT} `);
     });
-  } catch (error) {
+  } catch (error) { 
     console.log("Ooops");
     console.log(error);
   }
