@@ -1,0 +1,386 @@
+<div class="container profile">
+  <div class="profile-info">
+    <div class="row">
+      <div class="col-xl-12">
+        <ul
+          class="nav nav-pills nav-justified justify-content-center flex-column flex-lg-row profile-nav"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <a
+              class="flex-lg-fill text-lg-center nav-link "
+              href="/profile/progress"
+              >Достижения</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="flex-lg-fill text-lg-center nav-link "
+              href="/profile"
+              >Профиль</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="flex-lg-fill text-lg-center active nav-link "
+              id="pills-contact-tab"
+              data-toggle="pill"
+              href="#pills-contact"
+              role="tab"
+              aria-controls="pills-contact"
+              aria-selected="false"
+              >Настройки</a
+            >
+          </li>
+        </ul>
+        <p class="profile-hello">Привет, IRLANDEC</p>
+        <div class="tab-content profile-content" id="pills-tabContent">
+         
+          <div
+            class="tab-pane fade show active  setting"
+            id="pills-contact"
+            role="tabpanel"
+            aria-labelledby="pills-contact-tab"
+          >
+            <div class="row">
+              <div class="col-xl-3">
+                <div
+                  class="nav flex-column nav-pills setting-nav"
+                  id="v-pills-tab"
+                  role="tablist"
+                  aria-orientation="vertical"
+                >
+                  <a
+                    class="nav-link active setting-href"
+                    id="v-pills-messages-tab"
+                    data-toggle="pill"
+                    href="#v-pills-messages"
+                    role="tab"
+                    aria-controls="v-pills-messages"
+                    aria-selected="false"
+                    >Изменить профиль</a
+                  >
+                  <a
+                    class="nav-link setting-href"
+                    id="v-pills-settings-tab"
+                    data-toggle="pill"
+                    href="#v-pills-settings"
+                    role="tab"
+                    aria-controls="v-pills-settings"
+                    aria-selected="false"
+                    >Личные данные</a
+                  >
+                  <a
+                    class="nav-link setting-href setting-logout"
+                    href="/profile/logout"
+                    >Выйти</a
+                  >
+                </div>
+              </div>
+              <div class="col-xl-9">
+                <div
+                  class="tab-content setting-content"
+                  id="v-pills-tabContent"
+                >
+                  <div
+                    class="tab-pane fade show active"
+                    id="v-pills-messages"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-messages-tab"
+                  >
+                    <div class="card">
+                      <div class="card-header">
+                        Профиль
+                      </div>
+                      <div class="card-body">
+                         {{#if settingError}}
+                      <p class="errorLogin">{{settingError}}</p>
+                        {{/if}}
+                        {{#if completeSetting}}
+                      <p class="completeRegister">{{completeSetting}}</p>
+                    {{/if}}
+                        <form
+                          action="/profile/setting"
+                          class="setting-form"
+                          method="POST"
+                        >
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="name"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Полное имя</label
+                            >
+                            <div class="col-xl-5 setting-input">
+                              <input
+                                name="name"
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                value="{{user.name}}"
+                                maxlength="35"
+                                required
+                              />
+                            </div>
+                          </div>
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="bio"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Рассказать о себе</label
+                            >
+                            <div
+                              class="col-xl-5 setting-input setting-textarea"
+                            >
+                              {{#if  isInput }}
+                              <textarea
+                                type="text"
+                                name="bio"
+                                rows="6"
+                                class="form-control"
+                                id="bio"
+                                maxlength="160"
+                                placeholder="Фонкерам салам остальным соболезну..."
+                              >{{dataInput.bio}}</textarea> 
+                                   {{else}}
+                               <textarea
+                                type="text"
+                                name="bio"
+                                rows="6"
+                                class="form-control"
+                                id="bio"
+                                maxlength="160"
+                                placeholder="Фонкерам салам остальным соболезну..."
+                              >{{user.bio}}</textarea>
+                                   {{/if}}
+                            </div>
+                          </div>
+
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="inputPassword"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Изменить фото</label
+                            >
+                            <div class="col-xl-5 setting-input">
+                              <div class="custom-file">
+                                <input
+                                  type="file"
+                                  class="custom-file-input"
+                                  id="inputGroupFile02"
+                                />
+                                <label
+                                  class="custom-file-label"
+                                  for="inputGroupFile02"
+                                  aria-describedby="inputGroupFileAddon02"
+                                  data-browse="Загрузить"
+                                  >Выбрать файл</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="city"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Город</label
+                            >
+                            <div class="col-xl-5 setting-input">
+                               {{#if  isInput }}
+                             <input
+                                name="city"
+                                type="text"
+                                class="form-control"
+                                id="city"
+                                maxlength="45"
+                                value="{{dataInput.city}}"
+                              /> 
+                              {{else}}
+                              <input
+                                name="city"
+                                type="text"
+                                class="form-control"
+                                id="city"
+                                maxlength="45"
+                                value="{{user.city}}"
+                              />
+                                {{/if}}
+                            </div>
+                          </div>
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="school"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Учебное заведение</label
+                            >
+                            <div class="col-xl-5 setting-input">
+                                 {{#if  isInput }}
+                              <input
+                                name="school"
+                                type="text"
+                                class="form-control"
+                                id="school"
+                                maxlength="45"
+                                 value='{{dataInput.school}}'
+                              /> 
+                                   {{else}}
+                               <input
+                                name="school"
+                                type="text"
+                                class="form-control"
+                                id="school"
+                                maxlength="45"
+                                 value='{{user.school}}'
+                              />
+                              {{/if}}
+                            </div>
+                          </div>
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="lookstat"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Публично показывать мою статистику</label
+                            >
+                            <div class="col-xl-5 setting-input">
+                              <div class="form-check">
+                               {{#if  user.lookstat }}
+                                <input
+                                  name="lookstat"
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="lookstat"
+                                  checked
+                                /> 
+                                {{else}}
+                                <input
+                                  name="lookstat"
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="lookstat"
+                                />
+                                {{/if}}
+                              </div>
+                            </div>
+                          </div>
+                          <input type="hidden" name="_csrf" value="{{csrf}}" />
+                          <div class="col-xl-5 offset-xl-4 setting-btn">
+                            <button type="submit" class="btn btn-success">
+                              Сохранить изменения
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="v-pills-settings"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-settings-tab"
+                  >
+                    <div class="card">
+                      <div class="card-header">
+                        Персональные данные
+                      </div>
+                      <div class="card-body">
+                        <div class="form-group row setting-form-area">
+                          <label
+                            for="email"
+                            class="col-xl-4 col-form-label setting-label"
+                            >Email</label
+                          >
+                          <div class="col-xl-5 setting-input">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="email"
+                              value="katkov.sy@yandex.ru"
+                              readonly
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        Сменить пароль
+                      </div>
+                      <div class="card-body">
+                        <form
+                          action="/profile/edit/personaldata"
+                          class="setting-form"
+                          method="POST"
+                        >
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="userpassword"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Текущий пароль</label
+                            >
+                            <div class="col-xl-5 setting-input">
+                              <input
+                                name="userpassword"
+                                type="password"
+                                class="form-control"
+                                id="userpassword"
+                                placeholder="Повторите текущий пароль"
+                                newpassword
+                              />
+                            </div>
+                          </div>
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="newpassword"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Новый пароль</label
+                            >
+                            <div class="col-xl-5 setting-input">
+                              <input
+                                name="newpassword"
+                                type="password"
+                                class="form-control"
+                                id="newpassword"
+                                placeholder="Введите новый пароль"
+                                required
+                              />
+                            </div>
+                          </div>
+                          <div class="form-group row setting-form-area">
+                            <label
+                              for="confirmnewpassword"
+                              class="col-xl-4 col-form-label setting-label"
+                              >Повторить пароль</label
+                            >
+                            <div class="col-xl-5 setting-input">
+                              <input
+                                name="confirmnewpassword"
+                                type="password"
+                                class="form-control"
+                                id="confirmnewpassword"
+                                placeholder="Повторите новый пароль"
+                                required
+                              />
+                            </div>
+                          </div>
+                          <input type="hidden" name="_csrf" value="{{csrf}}" />
+
+                          <div class="col-xl-5 offset-xl-4 setting-btn">
+                            <button type="submit" class="btn btn-success">
+                              Сохранить пароль
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

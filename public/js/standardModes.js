@@ -1,7 +1,7 @@
 const FastMatch = {
     //дефолтное время матча
     timeMatch: 1,
-    arifmSign: ["+"],
+    arifmSign: ['&#43;'],
     //переменные для статистики  в helperRight (они же для статистики)
     allExаmple: 0,
     correctExаmple: 0,
@@ -11,7 +11,7 @@ const FastMatch = {
     counterExample: 0,
     //переменная для ответа
     answer: 0,
-    levelOfDifficulty: [
+    levelOfDifficulty: [ 
         { from: 0, to: 0 },
         { from: 1, to: 10 },
         { from: 5, to: 50 },
@@ -23,7 +23,7 @@ const FastMatch = {
     // считаем ответ
     answerCounter(randomArifmSign) {
         //целочисленное деление
-        if (randomArifmSign === "/") {
+        if (randomArifmSign === "&#247;") {
             firstParam.innerHTML =
                 +firstParam.textContent * +secondParam.textContent;
         }
@@ -297,19 +297,19 @@ $(document).ready(function () {
             let sign = "";
             switch ($(this).data("arifm")) {
                 case "сложение":
-                    sign = "+";
+                    sign = "&#43;";
                     FastMatch.addArifmSign(sign);
                     break;
                 case "вычитание":
-                    sign = "-";
+                    sign = "&#8722;";
                     FastMatch.addArifmSign(sign);
                     break;
                 case "умножение":
-                    sign = "*";
+                    sign = "&#215;";
                     FastMatch.addArifmSign(sign);
                     break;
                 case "деление":
-                    sign = "/";
+                    sign = "&#247;";
                     FastMatch.addArifmSign(sign);
                     break;
             }
@@ -492,14 +492,14 @@ function showStat() {
         FastMatch.correctExаmple +
         " (" +
         FastMatch.percentageOfCorrectAnswers +
-        "%)";
+        " )";
     document.querySelector(".statFalse").textContent =
         FastMatch.allExаmple - FastMatch.correctExаmple;
     document.querySelector(".statTime").textContent =
         FastMatch.timeMiddleExample + " сек";
         submitStatistic()
 }
-
+ 
 function timeStat() {
     let sum = 0;
     for (const time of timeForExample) {

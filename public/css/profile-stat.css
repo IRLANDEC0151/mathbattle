@@ -1,0 +1,14 @@
+.profile {
+  margin-top: 5rem;
+}
+.profile-hello {
+  font-size: 5rem;
+  text-align: center;
+  margin: 5rem auto;
+  font-weight: bolder;
+}
+.profile-content {
+  margin: 2rem 0 10rem 0;
+  background-color: white;
+  padding: 1rem;
+}

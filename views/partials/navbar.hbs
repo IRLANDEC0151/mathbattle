@@ -1,14 +1,19 @@
 <!-- Navbar -->
         <main>
-            <nav class="navbar navbar-expand-lg navbar-light mb-2">
-                <img class="logoIMG"
+            <nav class="navbar navbar-expand-lg navbar-light mb-2 ">
+                  <img class="logoIMG"
                     src="/math.svg"
                     alt="MathBattle Logo"
                 />
                 <a class="navbar-brand block-text logoText" href="/">Math Battle</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                 </button>
+              
                 <div
-                    class="collapse navbar-collapse d-flex flex-row-reverse my-3"
-                    id="navbarNav"
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarTogglerDemo01"
                 >
                     <ul class="navbar-nav">
                         {{#if  isFastMatch}}

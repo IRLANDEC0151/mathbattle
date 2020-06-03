@@ -5,10 +5,9 @@ const bcrypt = require("bcryptjs");
 exports.registerValidators = [
   body("name")
     .trim()
-    .isLength({ min: 2 })
-    .withMessage(
-      "Имя должно содержать только буквы и цифры"
-    ),
+    .isAlpha()
+    .withMessage("Имя должно содержать только буквы")
+    .isLength({ min: 2 }),
   body("email")
     .isEmail()
     .withMessage("Некорректный email")
@@ -23,10 +22,7 @@ exports.registerValidators = [
       }
     })
     .normalizeEmail(),
-  body(
-    "password",
-    "Слишком короткий пароль"
-  )
+  body("password", "Слишком короткий пароль")
     .isLength({ min: 6, max: 30 })
     .isAlphanumeric()
     .trim(),
@@ -51,14 +47,14 @@ exports.loginValidators = [
     })
     .normalizeEmail(),
   body("password")
-    .custom(async (value, { req }) => { 
+    .custom(async (value, { req }) => {
       try {
         const candidate = await User.findOne({ email: req.body.email });
         if (!candidate) {
           return Promise.reject("Неверный email или пароль");
         }
         const pass = await bcrypt.compare(value, candidate.password);
-        
+
         if (!pass) {
           return Promise.reject("Неверный email или пароль");
         }
@@ -66,22 +62,29 @@ exports.loginValidators = [
         console.log(error);
       }
     })
-    .withMessage("!!!!!!!!!!!!!!!!"),
 ];
-exports.resetValidators=[
+exports.resetValidators = [
   body("email")
     .isEmail()
     .withMessage("Некорректный email")
     .custom(async (value, req) => {
       try {
         const candidate = await User.findOne({ email: value });
-        
+
         if (!candidate) {
-          
           return Promise.reject("Такой пользователь не зарегистрирован");
         }
       } catch (error) {
         console.log(error);
       }
-    }) 
-]
+    }),
+];
+
+exports.profileValidators = [
+  body("name")
+  .isAlpha()
+  .withMessage("Имя должно содержать только буквы")
+  .isLength({ min: 2 })
+  .withMessage("Слишком короткое имя")
+  .trim()
+];

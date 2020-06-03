@@ -5,26 +5,16 @@
   cursor: pointer;
 }
 .navbar {
-  background-color: #ff9e14;
-  height: 10rem;
+  justify-content: space-between;
+  background-color: #ff9800;
+  min-height: 11rem;
 }
 .navbar-nav li {
-  margin-right: 0.3rem;
+  margin-right: 1.1rem;
 }
 .nav-link {
   font-size: 3rem;
 }
-.navbar-expand-lg .navbar-nav .nav-link {
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
 .block-text {
   font-size: 2.5rem;
-}
-
-.logIn {
-  border: 2px solid black;
-  border-radius: 10px;
-  font-size: 2.7rem;
-
 }

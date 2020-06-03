@@ -16,6 +16,10 @@ const userSchema = new Schema({
   avatarUrl: String,
   resetToken: String,
   resetTokenExp: Date,
+  bio: String,
+  city: String,
+  school: String,
+  lookstat: Boolean,
   userStatistic: {
     statisticId: {
       type: Schema.Types.ObjectId,
