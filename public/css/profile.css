@@ -1,70 +1,21 @@
 .profile {
   margin-top: 5rem;
 }
-.profile-hello {
-  font-size: 5rem;
-  text-align: center;
-  margin: 5rem auto;
-  font-weight: bolder;
-}
 .profile-content {
-  margin: 2rem 0 10rem 0;
+  margin: 10rem 0 10rem 0;
+  border-radius: 30px;
   background-color: white;
+  box-shadow: 15px 40px 20px #b9b6b2;
   padding: 1rem;
 }
-.setting-nav {
-  margin-top: 3rem;
+.profile .nav-menu {
+  box-shadow: 15px 20px 20px #b9b6b2;
+  background-color: white;
+  color: #03A9F4;
+  border: 1px solid #e2dcdc;
 }
-.setting-href {
-  font-size: 2.5rem;
-}
-.setting-content {
-  margin-top: 3rem;
-}
-.setting-form-area {
-  margin: 4rem 0;
-}
-.setting-input {
-  padding-top: 0.4rem;
-}
-.setting-input input {
-  height: 3.5rem;
-  font-size: 1.5rem;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-.setting-label {
-  text-align: right;
-  font-size: 2rem;
-  font-weight: bold;
-}
-.setting-textarea textarea {
-  resize: none;
-  font-size: 1.5rem;
-}
-.setting-btn {
-  margin-bottom: 3rem;
-}
-.setting-btn button {
-  font-size: 2rem;
-}
-.setting-logout {
-  color: #373a3d;
-  margin-top: 5rem;
-  border: 2px solid #373a3d;
-  box-shadow: 0 1px 5px #373a3d;
-  transition-duration: 0.5s;
-}
-.setting-logout:hover {
-  color: white;
-  background-color: #373a3d;
-}
-.card {
-  margin-bottom: 4rem;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-}
-.card-header {
-  font-size: 2rem;
-}
-.form-check input {
-  box-shadow: none;
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #03A9F4;
 }

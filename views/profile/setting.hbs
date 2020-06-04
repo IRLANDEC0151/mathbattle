@@ -9,32 +9,33 @@
         >
           <li class="nav-item" role="presentation">
             <a
-              class="flex-lg-fill text-lg-center nav-link "
+              class="flex-lg-fill text-lg-center nav-link nav-menu"
               href="/profile/progress"
+              style="border-radius: 5% 0% 0% 5% / 35% 0% 0% 35%"
               >Достижения</a
             >
           </li>
           <li class="nav-item" role="presentation">
             <a
-              class="flex-lg-fill text-lg-center nav-link "
+              class="flex-lg-fill text-lg-center nav-link nav-menu"
               href="/profile"
               >Профиль</a
             >
           </li>
           <li class="nav-item" role="presentation">
             <a
-              class="flex-lg-fill text-lg-center active nav-link "
+              class="profile-activeNav flex-lg-fill text-lg-center active nav-link nav-menu "
               id="pills-contact-tab"
               data-toggle="pill"
               href="#pills-contact"
               role="tab"
               aria-controls="pills-contact"
               aria-selected="false"
+              style="border-radius: 0% 5% 5% 0% / 0% 35% 35% 0%"
               >Настройки</a
             >
           </li>
         </ul>
-        <p class="profile-hello">Привет, IRLANDEC</p>
         <div class="tab-content profile-content" id="pills-tabContent">
          
           <div
@@ -52,7 +53,7 @@
                   aria-orientation="vertical"
                 >
                   <a
-                    class="nav-link active setting-href"
+                    class="nav-link active setting-href  "
                     id="v-pills-messages-tab"
                     data-toggle="pill"
                     href="#v-pills-messages"
@@ -62,7 +63,7 @@
                     >Изменить профиль</a
                   >
                   <a
-                    class="nav-link setting-href"
+                    class="nav-link setting-href "
                     id="v-pills-settings-tab"
                     data-toggle="pill"
                     href="#v-pills-settings"
@@ -307,8 +308,14 @@
                         Сменить пароль
                       </div>
                       <div class="card-body">
+                         {{#if updatePasswordError}}
+                      <p class="errorLogin">{{updatePasswordError}}</p>
+                        {{/if}}
+                        {{#if completeUpdatePassword}}
+                      <p class="completeRegister">{{completeUpdatePassword}}</p>
+                    {{/if}}
                         <form
-                          action="/profile/edit/personaldata"
+                          action="/profile/updatePassword"
                           class="setting-form"
                           method="POST"
                         >
@@ -320,11 +327,12 @@
                             >
                             <div class="col-xl-5 setting-input">
                               <input
-                                name="userpassword"
+                                name="userPassword"
                                 type="password"
                                 class="form-control"
                                 id="userpassword"
-                                placeholder="Повторите текущий пароль"
+                                placeholder="Введите текущий пароль"
+                                maxlength="30"
                                 newpassword
                               />
                             </div>
@@ -337,32 +345,37 @@
                             >
                             <div class="col-xl-5 setting-input">
                               <input
-                                name="newpassword"
+                                name="newPassword"
                                 type="password"
                                 class="form-control"
                                 id="newpassword"
                                 placeholder="Введите новый пароль"
+                                maxlength="30"
+
                                 required
                               />
                             </div>
                           </div>
                           <div class="form-group row setting-form-area">
                             <label
-                              for="confirmnewpassword"
+                              for="confirmNewPassword"
                               class="col-xl-4 col-form-label setting-label"
                               >Повторить пароль</label
                             >
                             <div class="col-xl-5 setting-input">
                               <input
-                                name="confirmnewpassword"
+                                name="confirmNewPassword"
                                 type="password"
                                 class="form-control"
-                                id="confirmnewpassword"
+                                id="confirmNewPassword"
                                 placeholder="Повторите новый пароль"
+                                maxlength="30"
+                                
                                 required
                               />
                             </div>
                           </div>
+                           <a href="/auth/reset">Забыли пароль?</a>
                           <input type="hidden" name="_csrf" value="{{csrf}}" />
 
                           <div class="col-xl-5 offset-xl-4 setting-btn">

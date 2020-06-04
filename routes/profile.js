@@ -3,8 +3,10 @@ const router = Router();
 //экспорт middleWare auth, для зашиты ссылки на профиль, если нет авторизации
 const auth = require("../middleware/auth");
 const User = require("../models/user");
+const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { profileValidators } = require("../middleware/validators");
+const { resetPasswordValidators } = require("../middleware/validators");
 
 router.get("/", auth.auth, (req, res) => {
   //рендерим эту страницу
@@ -26,6 +28,7 @@ router.get("/setting", auth.auth, (req, res) => {
   });
 });
 
+//изменение профиля
 router.post("/setting", auth.auth, profileValidators, async (req, res) => {
   try {
     const errors = validationResult(req);
@@ -70,11 +73,46 @@ router.post("/setting", auth.auth, profileValidators, async (req, res) => {
       user: user.toObject(),
       completeSetting: req.flash("completeSetting"),
     });
-  } catch (error) {
+  } catch (error) { 
     console.log(error);
   }
 });
 
+//меняем пароль в настройках
+router.post("/updatePassword", auth.auth, resetPasswordValidators, async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      console.log(errors);
+      
+      req.flash("updatePasswordError", errors.array()[0].msg);
+      return res.status(422).render("profile/setting", {
+        title: "Настройки профиля",
+        isLogin: true,
+        style: "/profile-setting.css",
+        user: req.user.toObject(),
+        settingError: req.flash("updatePasswordError"),
+      });
+    }
+    const user = await User.findById(req.user._id);
+    user.password = await bcrypt.hash(req.body.newPassword, 10);
+    
+
+    await user.save();
+    console.log("Пароль успешно изменен");
+    
+    req.flash("completeUpdatePassword", "Пароль успешно изменен!");
+    res.render("profile/setting", {
+      title: "Настройки профиля",
+      isLogin: true,
+      style: "/profile-setting.css",
+      user: req.user.toObject(),
+      completeSetting: req.flash("completeUpdatePassword"),
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
 router.get("/progress", auth.auth, (req, res) => {
   //рендерим эту страницу
   res.render("profile/progress", {

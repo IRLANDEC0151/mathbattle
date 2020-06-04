@@ -22,13 +22,10 @@ exports.registerValidators = [
       }
     })
     .normalizeEmail(),
-  body("password", "Слишком короткий пароль")
-    .isLength({ min: 6, max: 30 })
-    .isAlphanumeric()
-    .trim(),
+  body("password", "Слишком короткий пароль").isLength({ min: 6 }).trim(),
   body("confirm").custom((value, { req }) => {
     if (value !== req.body.password) {
-      throw new Error("пароли должны совпадать");
+      throw new Error("Пароли должны совпадать");
     }
     return true;
   }),
@@ -46,22 +43,21 @@ exports.loginValidators = [
       }
     })
     .normalizeEmail(),
-  body("password")
-    .custom(async (value, { req }) => {
-      try {
-        const candidate = await User.findOne({ email: req.body.email });
-        if (!candidate) {
-          return Promise.reject("Неверный email или пароль");
-        }
-        const pass = await bcrypt.compare(value, candidate.password);
-
-        if (!pass) {
-          return Promise.reject("Неверный email или пароль");
-        }
-      } catch (error) {
-        console.log(error);
+  body("password").custom(async (value, { req }) => {
+    try {
+      const candidate = await User.findOne({ email: req.body.email });
+      if (!candidate) {
+        return Promise.reject("Неверный email или пароль");
       }
-    })
+      const pass = await bcrypt.compare(value, candidate.password);
+
+      if (!pass) {
+        return Promise.reject("Неверный email или пароль");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }),
 ];
 exports.resetValidators = [
   body("email")
@@ -82,9 +78,33 @@ exports.resetValidators = [
 
 exports.profileValidators = [
   body("name")
-  .isAlpha()
-  .withMessage("Имя должно содержать только буквы")
-  .isLength({ min: 2 })
-  .withMessage("Слишком короткое имя")
-  .trim()
+    .isAlpha()
+    .withMessage("Имя должно содержать только буквы")
+    .isLength({ min: 2 })
+    .withMessage("Слишком короткое имя")
+    .trim(),
+];
+
+exports.resetPasswordValidators = [
+  body("userPassword").custom(async (value, { req }) => {
+    const candidate = await User.findOne({ email: req.user.email });
+    const pass = await bcrypt.compare(value, candidate.password);
+    if (!pass) {
+      return Promise.reject("Вы ввели неверный пароль");
+    }
+  }),
+  body("newPassword", "Слишком короткий пароль").isLength({ min: 6 }).trim(),
+  body("confirmNewPassword")
+    .custom(async (value, { req }) => {
+      if (value !== req.body.newPassword) {
+        throw new Error("Пароли должны совпадать");
+      }
+      const candidate = await User.findOne({ email: req.user.email });
+      const pass = await bcrypt.compare(value, candidate.password);
+      if (pass) {
+        throw new Error("Новый пароль совпадает с текущим");
+      }
+      return true;
+    })
+    .trim(),
 ];

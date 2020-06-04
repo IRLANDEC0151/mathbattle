@@ -1,25 +1,42 @@
 .profile {
   margin-top: 5rem;
 }
-.profile-hello {
-  font-size: 5rem;
-  text-align: center;
-  margin: 5rem auto;
-  font-weight: bolder;
-}
 .profile-content {
-  margin: 2rem 0 10rem 0;
+  margin: 10rem 0 10rem 0;
+  border-radius: 30px;
   background-color: white;
+  box-shadow: 0px 40px 20px #b9b6b2;
   padding: 1rem;
+}
+.profile .nav-menu {
+  box-shadow: 15px 20px 20px #b9b6b2;
+  background-color: white;
+  color: #03A9F4;
+  border: 1px solid #e2dcdc;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #03A9F4;
 }
 .setting-nav {
   margin-top: 3rem;
 }
 .setting-href {
   font-size: 2.5rem;
+  color: #03A9F4;
+}
+.setting-href:hover {
+  color: #03A9F4;
 }
 .setting-content {
   margin-top: 3rem;
+}
+.setting-form a {
+  float: right;
+  font-size: 2rem;
+  color: #8b7a67;
+  text-decoration: none;
 }
 .setting-form-area {
   margin: 4rem 0;
@@ -46,8 +63,10 @@
 }
 .setting-btn button {
   font-size: 2rem;
+  border-radius: 8px;
 }
 .setting-logout {
+  font-size: 2.5rem;
   color: #373a3d;
   margin-top: 5rem;
   border: 2px solid #373a3d;
@@ -67,4 +86,16 @@
 }
 .form-check input {
   box-shadow: none;
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
 }

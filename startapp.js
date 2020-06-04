@@ -108,7 +108,7 @@ async function start() {
     console.log(error);
   }
 }
-
+ 
 start();
 
 //TODO: @root. переменная глобальная в hbs

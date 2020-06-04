@@ -111,9 +111,9 @@ router.post("/register", registerValidators, async (req, res) => {
 });
 
 //переход на страницу сброса пароля
-router.get("/reset", auth.profile, async (req, res) => {
+router.get("/reset",  async (req, res) => {
   try {
-    res.render("auth/reset", {
+    res.render("auth/reset", {  
       title: "Восстановление пароля",
       style: "/reset.css",
       error: req.flash("error"),
