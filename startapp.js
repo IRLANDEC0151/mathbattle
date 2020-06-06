@@ -105,7 +105,7 @@ async function start() {
     });
   } catch (error) {
     console.log("Ooops");
-    console.log(error);
+    console.log(error);   
   }
 }
  

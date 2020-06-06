@@ -7,7 +7,7 @@
 .navbar {
   justify-content: space-between;
   background-color: #ff9800;
-  min-height: 11rem;
+  min-height: 10rem;
 }
 .navbar-nav li {
   margin-right: 1.1rem;
@@ -17,4 +17,16 @@
 }
 .block-text {
   font-size: 2.5rem;
+}
+.nav-item {
+  margin: auto 0;
+}
+.logIn {
+  margin-left: 2rem;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+.logIn a {
+  font-size: 3rem;
 }

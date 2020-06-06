@@ -16,6 +16,15 @@ const statisticsSchema = new Schema({
       timeMiddleExample: Number,
     }),
   ],
+  lastMatch: {
+    nameModes: String,
+    allExample: Number,
+    correctExample: Number,
+    percentageOfCorrectAnswers: Number,
+    timeMiddleExample: Number,
+  },
+
+  todayStatistic: [],
   userId: {
     type: Schema.Types.ObjectId,
     ref: "User",

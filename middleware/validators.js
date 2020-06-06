@@ -78,8 +78,6 @@ exports.resetValidators = [
 
 exports.profileValidators = [
   body("name")
-    .isAlpha()
-    .withMessage("Имя должно содержать только буквы")
     .isLength({ min: 2 })
     .withMessage("Слишком короткое имя")
     .trim(),

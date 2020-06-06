@@ -24,7 +24,7 @@
           </li>
           <li class="nav-item" role="presentation">
             <a
-              class="profile-activeNav flex-lg-fill text-lg-center active nav-link nav-menu "
+              class="profile-activeNav flex-lg-fill text-lg-center {{settingLinkActive}} nav-link nav-menu "
               id="pills-contact-tab"
               data-toggle="pill"
               href="#pills-contact"
@@ -39,7 +39,7 @@
         <div class="tab-content profile-content" id="pills-tabContent">
          
           <div
-            class="tab-pane fade show active  setting"
+            class="tab-pane fade show active setting"
             id="pills-contact"
             role="tabpanel"
             aria-labelledby="pills-contact-tab"
@@ -53,7 +53,7 @@
                   aria-orientation="vertical"
                 >
                   <a
-                    class="nav-link active setting-href  "
+                    class="nav-link  setting-href {{settingLinkActive}} "
                     id="v-pills-messages-tab"
                     data-toggle="pill"
                     href="#v-pills-messages"
@@ -63,7 +63,7 @@
                     >Изменить профиль</a
                   >
                   <a
-                    class="nav-link setting-href "
+                    class="nav-link setting-href {{privateLinkActive}}"
                     id="v-pills-settings-tab"
                     data-toggle="pill"
                     href="#v-pills-settings"
@@ -85,7 +85,7 @@
                   id="v-pills-tabContent"
                 >
                   <div
-                    class="tab-pane fade show active"
+                    class="tab-pane fade {{settingContentShow}}"
                     id="v-pills-messages"
                     role="tabpanel"
                     aria-labelledby="v-pills-messages-tab"
@@ -100,6 +100,9 @@
                         {{/if}}
                         {{#if completeSetting}}
                       <p class="completeRegister">{{completeSetting}}</p>
+                    {{/if}}
+                    {{#if completeUpdatePassword}}
+                      <p class="completeRegister">{{completeUpdatePassword}}</p>
                     {{/if}}
                         <form
                           action="/profile/setting"
@@ -275,7 +278,7 @@
                     </div>
                   </div>
                   <div
-                    class="tab-pane fade"
+                    class="tab-pane fade {{privateContentShow}}"
                     id="v-pills-settings"
                     role="tabpanel"
                     aria-labelledby="v-pills-settings-tab"
@@ -296,7 +299,7 @@
                               type="email"
                               class="form-control"
                               id="email"
-                              value="katkov.sy@yandex.ru"
+                              value="{{user.email}}"
                               readonly
                             />
                           </div>
@@ -311,9 +314,7 @@
                          {{#if updatePasswordError}}
                       <p class="errorLogin">{{updatePasswordError}}</p>
                         {{/if}}
-                        {{#if completeUpdatePassword}}
-                      <p class="completeRegister">{{completeUpdatePassword}}</p>
-                    {{/if}}
+                        
                         <form
                           action="/profile/updatePassword"
                           class="setting-form"
@@ -333,7 +334,8 @@
                                 id="userpassword"
                                 placeholder="Введите текущий пароль"
                                 maxlength="30"
-                                newpassword
+                                required
+                                
                               />
                             </div>
                           </div>

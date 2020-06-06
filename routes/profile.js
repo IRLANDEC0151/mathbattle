@@ -3,18 +3,23 @@ const router = Router();
 //экспорт middleWare auth, для зашиты ссылки на профиль, если нет авторизации
 const auth = require("../middleware/auth");
 const User = require("../models/user");
+const Statistic = require("../models/statistic");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { profileValidators } = require("../middleware/validators");
 const { resetPasswordValidators } = require("../middleware/validators");
 
-router.get("/", auth.auth, (req, res) => {
+let isInput = false;
+let dataInput = {};
+router.get("/", auth.auth, async (req, res) => {
+  let stat = await Statistic.findOne({ userId: req.user });
   //рендерим эту страницу
   res.render("profile/profile", {
     title: "Профиль",
     style: "/profile.css",
     isLogin: true,
     user: req.user.toObject(),
+    lastMatch: stat.lastMatch,
   });
 });
 
@@ -25,38 +30,40 @@ router.get("/setting", auth.auth, (req, res) => {
     isLogin: true,
     style: "/profile-setting.css",
     user: req.user.toObject(),
+    settingLinkActive: "active",
+    settingContentShow: "show active",
+    completeSetting: req.flash("completeSetting"),
+    settingError: req.flash("settingError"),
+    completeUpdatePassword: req.flash("completeUpdatePassword"),
+    isInput,
+    dataInput,
   });
+  isInput = false;
 });
 
 //изменение профиля
 router.post("/setting", auth.auth, profileValidators, async (req, res) => {
+  dataInput = {
+    name: req.body.name,
+    bio: req.body.bio,
+    city: req.body.city,
+    school: req.body.school,
+  };
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      isInput = true;
       req.flash("settingError", errors.array()[0].msg);
-      return res.status(422).render("profile/setting", {
-        title: "Настройки профиля",
-        isLogin: true,
-        style: "/profile-setting.css",
-        user: req.user.toObject(),
-        settingError: req.flash("settingError"),
-        isInput: true,
-        dataInput: {
-          name: req.body.name,
-          bio: req.body.bio,
-          city: req.body.city,
-          school: req.body.school,
-        },
-      });
+      return res.status(422).redirect("/profile/setting");
     }
+    isInput = false;
+
     const user = await User.findById(req.user._id);
     const toChange = {
-      name: req.body.name,
-      bio: req.body.bio,
-      city: req.body.city,
-      school: req.body.school,
+      ...dataInput,
       lookstat: req.body.lookstat !== undefined ? true : false,
     };
+
     if (req.file) {
       toChange.avatarUrl = req.file.path;
     }
@@ -66,53 +73,48 @@ router.post("/setting", auth.auth, profileValidators, async (req, res) => {
     console.log("Профиль успешно изменен");
 
     req.flash("completeSetting", "Профиль успешно изменен!");
-    res.render("profile/setting", {
-      title: "Настройки профиля",
-      isLogin: true,
-      style: "/profile-setting.css",
-      user: user.toObject(),
-      completeSetting: req.flash("completeSetting"),
-    });
-  } catch (error) { 
-    console.log(error);
-  }
-});
-
-//меняем пароль в настройках
-router.post("/updatePassword", auth.auth, resetPasswordValidators, async (req, res) => {
-  try {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      console.log(errors);
-      
-      req.flash("updatePasswordError", errors.array()[0].msg);
-      return res.status(422).render("profile/setting", {
-        title: "Настройки профиля",
-        isLogin: true,
-        style: "/profile-setting.css",
-        user: req.user.toObject(),
-        settingError: req.flash("updatePasswordError"),
-      });
-    }
-    const user = await User.findById(req.user._id);
-    user.password = await bcrypt.hash(req.body.newPassword, 10);
-    
-
-    await user.save();
-    console.log("Пароль успешно изменен");
-    
-    req.flash("completeUpdatePassword", "Пароль успешно изменен!");
-    res.render("profile/setting", {
-      title: "Настройки профиля",
-      isLogin: true,
-      style: "/profile-setting.css",
-      user: req.user.toObject(),
-      completeSetting: req.flash("completeUpdatePassword"),
-    });
+    res.redirect("/profile/setting");
   } catch (error) {
     console.log(error);
   }
 });
+
+//изменение пароля в настройках
+router.post(
+  "/updatePassword",
+  auth.auth,
+  resetPasswordValidators,
+  async (req, res) => {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        console.log(errors);
+
+        req.flash("updatePasswordError", errors.array()[0].msg);
+        return res.status(422).render("profile/setting", {
+          title: "Настройки профиля",
+          isLogin: true,
+          style: "/profile-setting.css",
+          user: req.user.toObject(),
+          privateLinkActive: "active",
+          privateContentShow: "show active",
+          updatePasswordError: req.flash("updatePasswordError"),
+        });
+      }
+      const user = await User.findById(req.user._id);
+      user.password = await bcrypt.hash(req.body.newPassword, 10);
+
+      await user.save();
+      console.log("Пароль успешно изменен");
+
+      req.flash("completeUpdatePassword", "Пароль успешно изменен!");
+      res.redirect("/profile/setting");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
 router.get("/progress", auth.auth, (req, res) => {
   //рендерим эту страницу
   res.render("profile/progress", {

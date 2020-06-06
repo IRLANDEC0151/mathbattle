@@ -2,7 +2,7 @@ html {
   font-size: 10px;
 }
 body {
-  background-color: #F0F1F4;
+  background-color: rgb(220, 226, 248);
   font-family: "Roboto", sans-serif;
 }
 .errorLogin {

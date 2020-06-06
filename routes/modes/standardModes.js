@@ -15,6 +15,15 @@ router.get("/standardModes", (req, res) => {
 });
 
 router.post("/standardModes", async (req, res) => {
+  console.log(req.body);
+
+  let lastMatch = {
+    nameModes: "standardModes",
+    allExample: +req.body.allExample,
+    correctExample: +req.body.correctExample,
+    percentageOfCorrectAnswers: +req.body.percentageOfCorrectAnswers,
+    timeMiddleExample: +req.body.timeMiddleExample, 
+  };
   try {
     const candidate = await User.findOne({ email: req.user.email });
     let stat = await Statistic.findOne({ userId: req.user });
@@ -24,10 +33,13 @@ router.post("/standardModes", async (req, res) => {
       await createUserStatistic(candidate);
       stat = await Statistic.findOne({ userId: req.user });
     }
-
+    //запись последнего матча
+    stat.lastMatch=lastMatch
+    
     //запись статистики матча
     arithmeticMean(stat, req);
-  } catch (error) { 
+    console.log(stat.lastMatch);
+  } catch (error) {
     console.log(error);
   }
 });
