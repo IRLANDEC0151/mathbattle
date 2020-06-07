@@ -284,10 +284,6 @@
   padding: 10px;
   font-size: 15px;
 }
-.modal-body:hover {
-  background-color: #ff9800;
-  transform: scale(1.1);
-}
 .range {
   position: relative;
   width: 38rem;

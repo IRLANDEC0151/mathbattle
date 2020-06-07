@@ -558,14 +558,36 @@ function addExampleToModalView(style) {
   );
 }
 
-//отправка данных о матче
-const form = document.querySelector(".postStat");
 function submitStatistic() {
-  document.querySelector(".allExample").value = FastMatch.allExаmple;
-  document.querySelector(".correctExample").value = FastMatch.correctExаmple;
-  document.querySelector(".percentageOfCorrectAnswers").value =
-    FastMatch.percentageOfCorrectAnswers;
-  document.querySelector(".timeMiddleExample").value =
-    FastMatch.timeMiddleExample;
-  form.submit();
+  let match = {
+    nameModes: "standardMode",
+    allExample: FastMatch.allExаmple,
+    correctExample: FastMatch.correctExаmple,
+    percentageOfCorrectAnswers: FastMatch.percentageOfCorrectAnswers,
+    timeMiddleExample: FastMatch.timeMiddleExample,
+  };
+  console.log(match);
+
+  send(match)
+    .then(() => console.log('статистика матча отправлена на сервер'))
+    .catch((e) => {
+      console.log(e);
+    });
+}
+
+//отправка статистики матча на сервер
+async function send(match) {
+  var token = document
+    .querySelector('input[name="_csrf"]')
+    .getAttribute("value");
+  return fetch("/modes/standardModes", {
+    method: "POST",
+    body: JSON.stringify(match),
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+      "CSRF-Token": token,
+    },
+  }).then((res) => {
+    return res.json();
+  });
 }

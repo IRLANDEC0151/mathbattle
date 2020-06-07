@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const jsonParser = require("express").json();
 const router = Router();
 const User = require("../../models/user");
 const Statistic = require("../../models/statistic");
@@ -14,16 +15,7 @@ router.get("/standardModes", (req, res) => {
   });
 });
 
-router.post("/standardModes", async (req, res) => {
-  console.log(req.body);
-
-  let lastMatch = {
-    nameModes: "standardModes",
-    allExample: +req.body.allExample,
-    correctExample: +req.body.correctExample,
-    percentageOfCorrectAnswers: +req.body.percentageOfCorrectAnswers,
-    timeMiddleExample: +req.body.timeMiddleExample, 
-  };
+router.post("/standardModes", jsonParser, async (req, res) => {
   try {
     const candidate = await User.findOne({ email: req.user.email });
     let stat = await Statistic.findOne({ userId: req.user });
@@ -34,10 +26,11 @@ router.post("/standardModes", async (req, res) => {
       stat = await Statistic.findOne({ userId: req.user });
     }
     //запись последнего матча
-    stat.lastMatch=lastMatch
-    
+    stat.lastMatch = req.body;
+
     //запись статистики матча
     arithmeticMean(stat, req);
+  console.log("данные последнего матча");
     console.log(stat.lastMatch);
   } catch (error) {
     console.log(error);
@@ -68,7 +61,7 @@ async function arithmeticMean(stat, req) {
 //создание статистики для пользователя
 async function createUserStatistic(candidate) {
   const userStat = new Statistic({
-    modes: [{ name: "standardMode" }, { name: "chainMode" }],
+    modes: [{ name: "standartMode" }, { name: "chainMode" }],
     userId: candidate._id,
   });
   await userStat.save();
@@ -77,11 +70,4 @@ async function createUserStatistic(candidate) {
   console.log("создание статистики прошло успешно");
 }
 
-function isEmpty(obj) {
-  for (let key in obj) {
-    // если тело цикла начнет выполняться - значит в объекте есть свойства
-    return false;
-  }
-  return true;
-}
 module.exports = router;
