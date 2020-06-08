@@ -22,8 +22,13 @@ const statisticsSchema = new Schema({
     correctExample: Number,
     percentageOfCorrectAnswers: Number,
     timeMiddleExample: Number,
+  }, 
+  today: {
+    today: Number,
+    games:Number,
+    examples: Number,
+    correctExamples: Number,
   },
-
   todayStatistic: [],
   userId: {
     type: Schema.Types.ObjectId,

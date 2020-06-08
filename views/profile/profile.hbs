@@ -1,12 +1,12 @@
 <div class="container">
   <ul
-    class="nav nav-pills nav-justified justify-content-center flex-column flex-lg-row navmenu"
+    class="nav nav-pills nav-justified justify-content-center flex-column flex-lg-row "
     id="pills-tab"
     role="tablist"
   >
     <li class="nav-item" role="presentation">
       <a
-        class="flex-lg-fill text-lg-center nav-link nav-menu"
+        class="flex-lg-fill text-lg-center nav-link link-profile"
         href="/profile/progress"
         style="border-radius: 5% 0% 0% 5% / 35% 0% 0% 35%;"
         >Достижения</a
@@ -14,7 +14,7 @@
     </li>
     <li class="nav-item" role="presentation">
       <a
-        class="flex-lg-fill text-lg-center nav-link active nav-menu"
+        class="flex-lg-fill text-lg-center nav-link active link-profile"
         id="pills-profile-tab"
         data-toggle="pill"
         href="#pills-profile"
@@ -26,7 +26,7 @@
     </li>
     <li class="nav-item" role="presentation">
       <a
-        class="flex-lg-fill text-lg-center nav-link nav-menu"
+        class="flex-lg-fill text-lg-center nav-link link-profile"
         href="/profile/setting"
         style="border-radius: 0% 5% 5% 0% / 0% 35% 35% 0%;"
         >Настройки</a
@@ -37,11 +37,11 @@
 
 <div class="container profile">
   <div class="row justify-content-around">
-    <div class="col-xl-2 profile-info">
-      <div class="profile-img">
+    <div class="col-xl-2 col-lg-3 profile-info">
+      <div class="profile-info-img">
         <img src="/newAvatar.svg" alt="аватар" />
       </div>
-      <div class="profile-bio">
+      <div class="profile-info-bio">
         <ul>
           <li>
             <span role="img"><img src="/user.svg" alt="" /></span>{{user.name}}
@@ -61,32 +61,40 @@
         </ul>
       </div>
     </div>
-    <div class="col-xl-9 profile-stat">
-      <p class="profile-hello">Привет, <strong>{{user.name}}</strong></p>
+    <div class="col-xl-9 col-lg-8 profile-stat">
+      <p class="profile-stat-hello">Привет, <strong>{{user.name}}</strong></p>
       <div class="row">
-        <div class="col-xl-9">
-          <div class="profile-allMatchStat">
-            <div class="profile-allStat">
+        <div class="col-xl-9 col-lg-8">
+          <div class=" d-flex flex-wrap  justify-content-around">
+              <div class="profile-stat-allStat mt-5">
               <img src="mail.svg" alt="" />
-              <p class="all">1231</p>
+             
+              <p class="all">{{allStat.games}}</p>
               <p class="match">Матчей</p>
-              <p class="today">Сегодня:<strong>123</strong></p>
+              <p class="today">Сегодня:<strong>{{todayStat.games}}</strong></p>
             </div>
 
-            <div class="profile-allStat">
+            <div class="profile-stat-allStat mt-5">
               <img src="mail.svg" alt="" />
-              <p class="all">9231</p>
+              <p class="all">{{allStat.examples}}</p>
               <p class="match">Примеров</p>
-              <p class="today">Сегодня:<strong>635</strong></p>
+              <p class="today">Сегодня:<strong>{{todayStat.examples}}</strong></p>
             </div>
-            <div class="profile-allStat">
+
+            <div class="profile-stat-allStat mt-5">
+              <img src="mail.svg" alt="" />
+              <p class="all">{{allStat.correctExamples}}</p>
+              <p class="match">Правильных</p>
+              <p class="today">Сегодня:<strong>{{todayStat.correctExamples}}</strong></p>
+            </div>
+            <div class="profile-stat-allStat mt-5">
               <img src="mail.svg" alt="" />
               <p class="all">7.3%</p>
               <p class="match">Ошибок</p>
               <p class="today">Сегодня:<strong>2.1%</strong></p>
             </div>
           </div>
-          <div class="profile-modesStat">
+          <div class="profile-stat-modeStat">
             <table class="table">
               <thead>
                 <p class="table-name">Статистика за все время</p>
@@ -125,24 +133,24 @@
           </div>
         </div>
 
-        <div class="col-xl-3">
-          <div class="profile-lastMatch">
-            <p class="last">Последняя игра</p>
-                <p class="mode">{{lastMatch.nameModes}}</p>
+        <div class="col-xl-3 col-lg-4">
+          <div class="profile-stat-lastMatch">
+            <p class="title">Последняя игра</p>
+                <p class="modeName">{{lastMatch.nameModes}}</p>
             <table class="lastMatchStat">
               </thead>
               <tbody>
                 <tr>
                   <td class="key">Всего решено:</td>
-                  <td class="value statAll" value="">{{lastMatch.allExample}}</td>
+                  <td class="value " value="">{{lastMatch.allExample}}</td>
                 </tr>
                 <tr>
-                  <td class="key">Правильных :</td>
-                  <td class="value statRight">{{lastMatch.correctExample}} ({{lastMatch.percentageOfCorrectAnswers}}%)</td>
+                  <td class="key">Правильных:</td>
+                  <td class="value ">{{lastMatch.correctExample}} ({{lastMatch.percentageOfCorrectAnswers}}%)</td>
                 </tr>
                 <tr>
-                  <td class="key"> Время на один пример:</td>
-                  <td class="value statTime">{{lastMatch.timeMiddleExample}}</td> 
+                  <td class="key"> В среднем на пример:</td>
+                  <td class="value ">{{lastMatch.timeMiddleExample}} сек</td> 
                 </tr>
                 <tr>
                 </tr>

@@ -8,17 +8,22 @@ const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { profileValidators } = require("../middleware/validators");
 const { resetPasswordValidators } = require("../middleware/validators");
+let date = new Date();
 
 let isInput = false;
 let dataInput = {};
+
 router.get("/", auth.auth, async (req, res) => {
   let stat = await Statistic.findOne({ userId: req.user });
+  
   //рендерим эту страницу
   res.render("profile/profile", {
-    title: "Профиль",
+    title: "Профиль",  
     style: "/profile.css",
     isLogin: true,
     user: req.user.toObject(),
+    allStat: allStatisticsProduction(stat), 
+    todayStat: stat.today,
     lastMatch: stat.lastMatch,
   });
 });
@@ -129,4 +134,23 @@ router.get("/logout", (req, res) => {
     res.redirect("/auth/login");
   });
 });
+
+function allStatisticsProduction(stat) {
+  let allStat = {
+    games: stat.modes.reduce((sum, current) => sum + current.allGames, 0),
+    examples: stat.modes.reduce(
+      (sum, current) => sum + current.allExample,
+      0
+    ),
+    correctExamples: stat.modes.reduce(
+      (sum, current) => sum + current.allCorrectExample,
+      0
+    ),
+    // percentageOfCorrectAnswers: stat.modes.reduce(
+    //   (sum, current) => sum + current.allExample,
+    //   0
+    // ),
+  };
+  return allStat;
+}
 module.exports = router;

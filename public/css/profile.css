@@ -1,54 +1,88 @@
 .container {
   margin-top: 5rem;
 }
+.container .link-profile {
+  box-shadow: 15px 20px 20px #b9b6b2;
+  background-color: white;
+  color: #03a9f4;
+  border: 1px solid #e2dcdc;
+}
 .profile {
   max-width: 1500px;
   margin-bottom: 10rem;
-}
-.profile-content {
-  margin: 5rem 0 10rem 0;
-  background-color: transparent;
-  padding: 1rem;
-}
-.profile-hello {
-  font-size: 3rem;
-  padding: 1rem;
-  color: #2f4768;
-}
-.profile-hello strong {
-  font-size: 3.5rem;
 }
 .profile-info {
   background-color: white;
   border-radius: 20px;
 }
-.profile-stat {
-  background-color: #f3f5f6;
-  border-radius: 20px;
-}
-.profile-img {
+.profile-info-img {
   text-align: center;
   margin: 2rem 0;
 }
-.profile-img img {
+.profile-info-img img {
   width: 100%;
 }
-.profile-bio ul {
+.profile-info-bio ul {
   list-style: none;
 }
-.profile-bio ul li {
+.profile-info-bio ul li {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #2f4768;
 }
-.profile-bio ul li span {
+.profile-info-bio ul li span {
   vertical-align: text-bottom;
   margin-right: 15px;
 }
-.profile-bio ul li span img {
+.profile-info-bio ul li span img {
   width: 20px;
 }
-.profile-modesStat {
+.profile-stat {
+  background-color: #f3f5f6;
+  border-radius: 20px;
+}
+.profile-stat-hello {
+  font-size: 3rem;
+  padding: 1rem;
+  color: #2f4768;
+}
+.profile-stat-hello strong {
+  font-size: 3.5rem;
+}
+.profile-stat-allStat {
+  display: inline-block;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 0px 5px rgba(255, 173, 80, 0.9);
+  border-radius: 5px;
+}
+.profile-stat-allStat p {
+  position: relative;
+}
+.profile-stat-allStat img {
+  width: 30px;
+  height: 30px;
+}
+.profile-stat-allStat .all {
+  font-size: 5rem;
+  color: #2f4768;
+}
+.profile-stat-allStat .match {
+  font-size: 1.9rem;
+  color: #a8b8cb;
+  top: -15px;
+}
+.profile-stat-allStat .today {
+  font-size: 2.3rem;
+  color: #3dce74;
+  top: -10px;
+}
+.profile-stat-allStat .today strong {
+  margin-left: 1rem;
+  font-size: 2.7rem;
+}
+.profile-stat-modeStat {
   max-width: 70rem;
   margin: 3rem auto;
   border: 2px solid #ffad50;
@@ -56,46 +90,17 @@
   box-shadow: 0 0px 5px rgba(255, 173, 80, 0.9);
   border-radius: 5px;
 }
-.profile-allStat {
-  padding: 10px;
-  width: 25rem;
-  background-color: white;
+.profile-stat-modeStat .table-name {
+  font-size: 3rem;
   text-align: center;
-  box-shadow: 0 0px 5px rgba(255, 173, 80, 0.9);
-  border-radius: 5px;
 }
-.profile-allStat p {
-  position: relative;
+.profile-stat-modeStat .table thead {
+  background-color: #ffad50;
 }
-.profile-allStat img {
-  width: 30px;
-  height: 30px;
+.profile-stat-modeStat .table thead th {
+  font-size: 1.7rem;
 }
-.profile-allStat .all {
-  font-size: 5rem;
-  color: #2f4768;
-}
-.profile-allStat .match {
-  font-size: 1.9rem;
-  color: #a8b8cb;
-  top: -15px;
-}
-.profile-allStat .today {
-  font-size: 2.3rem;
-  color: #3dce74;
-  top: -10px;
-}
-.profile-allStat .today strong {
-  margin-left: 1rem;
-  font-size: 2.7rem;
-}
-.profile-allMatchStat {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  align-items: center;
-}
-.profile-lastMatch {
+.profile-stat-lastMatch {
   position: relative;
   top: -30px;
   background-color: wheat;
@@ -103,57 +108,41 @@
   box-shadow: 0 0px 5px rgba(255, 136, 0, 0.9);
   border-radius: 5px;
 }
-.profile-lastMatch .last {
+.profile-stat-lastMatch .title {
   text-align: center;
   font-size: 3rem;
   color: #2f4768;
 }
-.profile-lastMatch .mode {
+.profile-stat-lastMatch .modeName {
   text-align: center;
   font-size: 2.5rem;
-  color: #FF9800;
+  color: #ff9800;
 }
-.profile-lastMatch .details {
+.profile-stat-lastMatch .details {
   margin-top: 1rem;
   text-align: center;
   font-size: 1.5rem;
   color: #a8b8cb;
   cursor: pointer;
 }
-.lastMatchStat {
+.profile-stat-lastMatch .lastMatchStat {
   width: 100%;
   margin: 0 auto;
   background-color: #ffad50;
   border-radius: 8px;
 }
-.lastMatchStat tbody {
+.profile-stat-lastMatch .lastMatchStat tbody {
   margin: 0 10px;
 }
-.lastMatchStat .value {
+.profile-stat-lastMatch .lastMatchStat .value {
   text-align: center;
-  padding: 5px 1px  5px 0;
+  padding: 5px 1px 5px 0;
 }
-.lastMatchStat .key {
-  padding: 5px 0px  5px 5px;
+.profile-stat-lastMatch .lastMatchStat .key {
+  padding: 5px 0px 5px 5px;
 }
-.lastMatchStat td {
+.profile-stat-lastMatch .lastMatchStat td {
   font-size: 1.5rem;
-}
-.table-name {
-  font-size: 3rem;
-  text-align: center;
-}
-.table thead {
-  background-color: #ffad50;
-}
-.table thead th {
-  font-size: 1.7rem;
-}
-.nav-menu {
-  box-shadow: 15px 20px 20px #b9b6b2;
-  background-color: white;
-  color: #03a9f4;
-  border: 1px solid #e2dcdc;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {

@@ -27,10 +27,11 @@ router.post("/standardModes", jsonParser, async (req, res) => {
     }
     //запись последнего матча
     stat.lastMatch = req.body;
+    todayStat(stat, req.body);
 
     //запись статистики матча
-    arithmeticMean(stat, req);
-  console.log("данные последнего матча");
+    await arithmeticMean(stat, req);
+    console.log("данные последнего матча");
     console.log(stat.lastMatch);
   } catch (error) {
     console.log(error);
@@ -70,4 +71,23 @@ async function createUserStatistic(candidate) {
   console.log("создание статистики прошло успешно");
 }
 
+function todayStat(stat, match) {
+  let date = new Date();
+
+  if (stat.today.today === date.getDate()) {
+    stat.today.games += 1;
+    stat.today.examples += +match.allExample;
+    stat.today.correctExamples += +match.correctExample;
+  } else {
+    console.log('новый день, новая статистика');
+    
+    stat.today.today = date.getDate();
+    stat.today.games = 1;
+    stat.today.examples = +match.allExample;
+    stat.today.correctExamples = +match.correctExample;
+  }
+  console.log('статистика сегодня');
+  
+  console.log(stat.today); 
+}
 module.exports = router;

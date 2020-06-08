@@ -1352,6 +1352,580 @@
                     "filename": "views\\profile.hbs"
                 }
             ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2020-06-08 19:14:53",
+            "filesum": 87,
+            "codesum": 11142,
+            "commentsum": 309,
+            "blanksum": 511,
+            "statistics": {
+                ".ini": {
+                    "code": 4,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 6,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".json": {
+                    "code": 3698,
+                    "comment": 0,
+                    "blank": 1
+                },
+                ".js": {
+                    "code": 1490,
+                    "comment": 204,
+                    "blank": 174
+                },
+                ".hbs": {
+                    "code": 1894,
+                    "comment": 0,
+                    "blank": 100
+                },
+                ".svg": {
+                    "code": 290,
+                    "comment": 0,
+                    "blank": 13
+                },
+                ".css": {
+                    "code": 1862,
+                    "comment": 0,
+                    "blank": 1
+                },
+                ".less": {
+                    "code": 1898,
+                    "comment": 105,
+                    "blank": 222
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": ".prettierrc"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "desktop.ini"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "emails\\registration.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "emails\\reset.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 1,
+                    "filename": "keys\\index.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "keys\\keys.dev.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "keys\\keys.prod.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "middleware\\auth.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "middleware\\error404.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "middleware\\file.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "middleware\\user.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 103,
+                    "comment": 0,
+                    "filename": "middleware\\validators.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "middleware\\variables.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "models\\statistic.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "models\\user.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3658,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 508,
+                    "comment": 0,
+                    "filename": "public\\css\\fastMatch.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 125,
+                    "comment": 0,
+                    "filename": "public\\css\\login.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "public\\css\\main.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "public\\css\\modes.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "public\\css\\navbar.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 101,
+                    "comment": 0,
+                    "filename": "public\\css\\profile-setting.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "public\\css\\profile-stat.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 162,
+                    "comment": 0,
+                    "filename": "public\\css\\profile.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 121,
+                    "comment": 0,
+                    "filename": "public\\css\\register.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 118,
+                    "comment": 0,
+                    "filename": "public\\css\\reset.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 625,
+                    "comment": 0,
+                    "filename": "public\\css\\standardModes.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "public\\img\\chain.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "public\\img\\checkmark.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\choise.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\key.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "public\\img\\lock.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\login.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "public\\img\\mail.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\math.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "public\\img\\multi.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\newAvatar.svg"
+                },
+                {
+                    "blank": 13,
+                    "code": 109,
+                    "comment": 0,
+                    "filename": "public\\img\\register.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "public\\img\\rocket.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 46,
+                    "comment": 0,
+                    "filename": "public\\img\\standard.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\timer.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\training.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\user.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "public\\img\\wrong.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 2,
+                    "filename": "public\\js\\auth.js"
+                },
+                {
+                    "blank": 45,
+                    "code": 266,
+                    "comment": 67,
+                    "filename": "public\\js\\fastMatch.js"
+                },
+                {
+                    "blank": 58,
+                    "code": 460,
+                    "comment": 78,
+                    "filename": "public\\js\\standardModes.js"
+                },
+                {
+                    "blank": 72,
+                    "code": 503,
+                    "comment": 41,
+                    "filename": "public\\less\\fastMatch.less"
+                },
+                {
+                    "blank": 10,
+                    "code": 127,
+                    "comment": 0,
+                    "filename": "public\\less\\login.less"
+                },
+                {
+                    "blank": 2,
+                    "code": 25,
+                    "comment": 3,
+                    "filename": "public\\less\\main.less"
+                },
+                {
+                    "blank": 5,
+                    "code": 33,
+                    "comment": 1,
+                    "filename": "public\\less\\modes.less"
+                },
+                {
+                    "blank": 7,
+                    "code": 35,
+                    "comment": 2,
+                    "filename": "public\\less\\navbar.less"
+                },
+                {
+                    "blank": 10,
+                    "code": 109,
+                    "comment": 0,
+                    "filename": "public\\less\\profile-setting.less"
+                },
+                {
+                    "blank": 14,
+                    "code": 166,
+                    "comment": 1,
+                    "filename": "public\\less\\profile.less"
+                },
+                {
+                    "blank": 9,
+                    "code": 139,
+                    "comment": 0,
+                    "filename": "public\\less\\register.less"
+                },
+                {
+                    "blank": 6,
+                    "code": 132,
+                    "comment": 0,
+                    "filename": "public\\less\\reset.less"
+                },
+                {
+                    "blank": 87,
+                    "code": 629,
+                    "comment": 57,
+                    "filename": "public\\less\\standardModes.less"
+                },
+                {
+                    "blank": 12,
+                    "code": 206,
+                    "comment": 16,
+                    "filename": "routes\\auth.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": "routes\\fastMatch.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "routes\\home.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 6,
+                    "filename": "routes\\leaderboard.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 10,
+                    "comment": 1,
+                    "filename": "routes\\modes.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 62,
+                    "comment": 5,
+                    "filename": "routes\\modes\\standardModes.js"
+                },
+                {
+                    "blank": 13,
+                    "code": 113,
+                    "comment": 6,
+                    "filename": "routes\\profile.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 85,
+                    "comment": 20,
+                    "filename": "startapp.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "views\\404.hbs"
+                },
+                {
+                    "blank": 5,
+                    "code": 61,
+                    "comment": 0,
+                    "filename": "views\\auth\\login.hbs"
+                },
+                {
+                    "blank": 2,
+                    "code": 140,
+                    "comment": 0,
+                    "filename": "views\\auth\\oldlogin.hbs"
+                },
+                {
+                    "blank": 2,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "views\\auth\\oldreset.hbs"
+                },
+                {
+                    "blank": 1,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "views\\auth\\password.hbs"
+                },
+                {
+                    "blank": 14,
+                    "code": 106,
+                    "comment": 0,
+                    "filename": "views\\auth\\register.hbs"
+                },
+                {
+                    "blank": 5,
+                    "code": 48,
+                    "comment": 0,
+                    "filename": "views\\auth\\reset.hbs"
+                },
+                {
+                    "blank": 8,
+                    "code": 140,
+                    "comment": 0,
+                    "filename": "views\\fastMatch.hbs"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "views\\home.hbs"
+                },
+                {
+                    "blank": 4,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "views\\layouts\\main.hbs"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "views\\leaderboard.hbs"
+                },
+                {
+                    "blank": 9,
+                    "code": 221,
+                    "comment": 0,
+                    "filename": "views\\modes.hbs"
+                },
+                {
+                    "blank": 13,
+                    "code": 305,
+                    "comment": 0,
+                    "filename": "views\\modes\\standardModes.hbs"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "views\\partials\\footer.hbs"
+                },
+                {
+                    "blank": 1,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "views\\partials\\head.hbs"
+                },
+                {
+                    "blank": 15,
+                    "code": 127,
+                    "comment": 0,
+                    "filename": "views\\partials\\navbar.hbs"
+                },
+                {
+                    "blank": 5,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "views\\profile.hbs"
+                },
+                {
+                    "blank": 3,
+                    "code": 154,
+                    "comment": 0,
+                    "filename": "views\\profile\\profile.hbs"
+                },
+                {
+                    "blank": 1,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "views\\profile\\progress.hbs"
+                },
+                {
+                    "blank": 9,
+                    "code": 392,
+                    "comment": 0,
+                    "filename": "views\\profile\\setting.hbs"
+                }
+            ]
         }
     ]
 }
