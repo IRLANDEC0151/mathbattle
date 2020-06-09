@@ -15,17 +15,24 @@ let dataInput = {};
 
 router.get("/", auth.auth, async (req, res) => {
   let stat = await Statistic.findOne({ userId: req.user });
-  
+
   //рендерим эту страницу
   res.render("profile/profile", {
-    title: "Профиль",  
+    title: "Профиль",
     style: "/profile.css",
+    script: "/profile.js",
     isLogin: true,
     user: req.user.toObject(),
-    allStat: allStatisticsProduction(stat), 
+    allStat: allStatisticsProduction(stat),
     todayStat: stat.today,
     lastMatch: stat.lastMatch,
   });
+});
+router.get("/details", async (req, res) => {
+  let stat = await Statistic.findOne({ userId: req.user });
+  console.log('детальная статистика отправлена');
+  
+  res.send(stat.lastMatch.details);
 });
 
 router.get("/setting", auth.auth, (req, res) => {
@@ -135,13 +142,11 @@ router.get("/logout", (req, res) => {
   });
 });
 
+//получение детальной статистики
 function allStatisticsProduction(stat) {
   let allStat = {
     games: stat.modes.reduce((sum, current) => sum + current.allGames, 0),
-    examples: stat.modes.reduce(
-      (sum, current) => sum + current.allExample,
-      0
-    ),
+    examples: stat.modes.reduce((sum, current) => sum + current.allExample, 0),
     correctExamples: stat.modes.reduce(
       (sum, current) => sum + current.allCorrectExample,
       0

@@ -22,10 +22,11 @@ const statisticsSchema = new Schema({
     correctExample: Number,
     percentageOfCorrectAnswers: Number,
     timeMiddleExample: Number,
-  }, 
+    details: String,
+  },
   today: {
     today: Number,
-    games:Number,
+    games: Number,
     examples: Number,
     correctExamples: Number,
   },

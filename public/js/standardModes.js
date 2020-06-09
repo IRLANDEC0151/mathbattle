@@ -540,7 +540,6 @@ function timeStat() {
   timeForExample = [];
   FastMatch.counterExample = 0;
 }
-
 function addExampleToModalView(style) {
   if (style) {
     style = "#DFF0D8";
@@ -560,16 +559,19 @@ function addExampleToModalView(style) {
 
 function submitStatistic() {
   let match = {
-    nameModes: "standardMode",
+    nameModes: "Стандартный",
     allExample: FastMatch.allExаmple,
     correctExample: FastMatch.correctExаmple,
     percentageOfCorrectAnswers: FastMatch.percentageOfCorrectAnswers,
     timeMiddleExample: FastMatch.timeMiddleExample,
+    details: document.querySelector(".modal-body tbody").outerHTML,
   };
-  console.log(match);
 
   send(match)
-    .then(() => console.log('статистика матча отправлена на сервер'))
+    .then((data) => {
+      console.log("статистика матча отправлена на сервер");
+      console.log(data);
+    })
     .catch((e) => {
       console.log(e);
     });
@@ -587,7 +589,11 @@ async function send(match) {
       "Content-Type": "application/json;charset=utf-8",
       "CSRF-Token": token,
     },
-  }).then((res) => {
-    return res.json();
-  });
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 }
