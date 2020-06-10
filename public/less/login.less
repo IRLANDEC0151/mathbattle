@@ -1,8 +1,10 @@
+@title:#3F3E3E;
+@btnLogin:#ff9900;
 .container{
     max-width: 980px;
   }
   .register {
-    border-radius: 5% 5% 5% 5%  ~"/" 10% 10% 10% 10%;
+    border-radius: 30px;
     box-shadow: 0px 20px 20px #978f87;
     background-image: linear-gradient(to left, rgb(255, 220, 199), rgb(255, 213, 184), rgb(255, 206, 168), rgb(255, 200, 153), rgb(255, 193, 137), rgb(255, 186, 122), rgb(254, 190, 118), rgb(253, 194, 114), rgb(253, 198, 110), rgb(252, 201, 105), rgb(251, 205, 101), rgb(250, 209, 97));
     margin-top: 5rem;
@@ -13,7 +15,7 @@
         font-weight: bold;
         font-size: 5rem;
         text-align: center;
-        color: rgb(63, 62, 62);
+        color: @title;
       }
     }
     &-body{
@@ -43,7 +45,7 @@
    
   
     &-button {
-      background-color: #ff9800;
+      background-color: @btnLogin;
       margin: 3rem auto 1rem auto;
       position: relative;
       border-radius: 35px;

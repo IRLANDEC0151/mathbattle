@@ -71,21 +71,21 @@
              
               <p class="all">{{allStat.games}}</p>
               <p class="match">Матчей</p>
-              <p class="today">Сегодня:<strong>{{todayStat.games}}</strong></p>
+              <p class="today">Сегодня:<strong>{{stat.today.games}}</strong></p>
             </div>
 
             <div class="profile-stat-allStat mt-5">
               <img src="mail.svg" alt="" />
               <p class="all">{{allStat.examples}}</p>
               <p class="match">Примеров</p>
-              <p class="today">Сегодня:<strong>{{todayStat.examples}}</strong></p>
+              <p class="today">Сегодня:<strong>{{stat.today.examples}}</strong></p>
             </div>
 
             <div class="profile-stat-allStat mt-5">
               <img src="mail.svg" alt="" />
               <p class="all">{{allStat.correctExamples}}</p>
               <p class="match">Правильных</p>
-              <p class="today">Сегодня:<strong>{{todayStat.correctExamples}}</strong></p>
+              <p class="today">Сегодня:<strong>{{stat.today.correctExamples}}</strong></p>
             </div>
             <div class="profile-stat-allStat mt-5">
               <img src="mail.svg" alt="" />
@@ -101,33 +101,12 @@
                 <tr>
                   <th scope="col">Режим</th>
                   <th scope="col">Матчей</th>
+                  <th scope="col">Примеров</th>
                   <th scope="col">Правильных</th>
-                  <th scope="col">Ошибки</th>
                   <th scope="col">Ср. время на ответ</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -136,21 +115,21 @@
         <div class="col-xl-3 col-lg-4">
           <div class="profile-stat-lastMatch">
             <p class="title">Последняя игра</p>
-                <p class="modeName">{{lastMatch.nameModes}}</p>
+                <p class="modeName">{{stat.lastMatch.name}}</p>
             <table class="lastMatchStat">
               </thead>
               <tbody>
                 <tr>
                   <td class="key">Всего решено:</td>
-                  <td class="value " value="">{{lastMatch.allExample}}</td>
+                  <td class="value " value="">{{stat.lastMatch.examples}}</td>
                 </tr>
                 <tr>
                   <td class="key">Правильных:</td>
-                  <td class="value ">{{lastMatch.correctExample}} ({{lastMatch.percentageOfCorrectAnswers}}%)</td>
+                  <td class="value ">{{stat.lastMatch.correctExamples}} ({{stat.lastMatch.percentageOfCorrectAnswers}}%)</td>
                 </tr>
                 <tr>
                   <td class="key"> В среднем на пример:</td>
-                  <td class="value ">{{lastMatch.timeMiddleExample}} сек</td> 
+                  <td class="value ">{{stat.lastMatch.timeMiddleExample}} сек</td> 
                 </tr>
                 <tr>
                 </tr>

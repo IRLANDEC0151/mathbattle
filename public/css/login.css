@@ -2,7 +2,7 @@
   max-width: 980px;
 }
 .register {
-  border-radius: 5% 5% 5% 5% / 10% 10% 10% 10%;
+  border-radius: 30px;
   box-shadow: 0px 20px 20px #978f87;
   background-image: linear-gradient(to left, #ffdcc7, #ffd5b8, #ffcea8, #ffc899, #ffc189, #ffba7a, #febe76, #fdc272, #fdc66e, #fcc969, #fbcd65, #fad161);
   margin-top: 5rem;
@@ -11,10 +11,11 @@
   margin: 4rem 0 1rem 0;
 }
 .register-head p {
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 5rem;
   text-align: center;
-  color: #3f3e3e;
+  color: #3F3E3E;
 }
 .register-body {
   text-align: center;
@@ -34,13 +35,14 @@
 }
 .register-img p {
   margin-top: 5rem;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 2rem;
   text-align: center;
   color: #05739e;
 }
 .register-button {
-  background-color: #ff9800;
+  background-color: #ff9900;
   margin: 3rem auto 1rem auto;
   position: relative;
   border-radius: 35px;

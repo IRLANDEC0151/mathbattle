@@ -1,8 +1,7 @@
 .card {
-  border-radius: 5% 5% 5% 5% / 5% 5% 5% 5%;
+  border-radius: 15px;
   box-shadow: 0px 20px 20px #978f87;
   min-height: 58rem;
-  
 }
 .card-title {
   font-size: 3rem;

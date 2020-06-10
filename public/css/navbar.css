@@ -6,7 +6,7 @@
 }
 .navbar {
   justify-content: space-between;
-  background-color: #ff9800;
+  background-color: #ffaa2a;
   min-height: 10rem;
 }
 .navbar-nav li {
@@ -28,5 +28,5 @@
   border-radius: 8px;
 }
 .logIn a {
-  font-size: 3rem;
+  font-size: 2.7rem;
 }

@@ -4,6 +4,7 @@ const router = Router();
 const auth = require("../middleware/auth");
 const User = require("../models/user");
 const Statistic = require("../models/statistic");
+const statService = require("../statisticsService");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { profileValidators } = require("../middleware/validators");
@@ -15,7 +16,6 @@ let dataInput = {};
 
 router.get("/", auth.auth, async (req, res) => {
   let stat = await Statistic.findOne({ userId: req.user });
-
   //рендерим эту страницу
   res.render("profile/profile", {
     title: "Профиль",
@@ -23,17 +23,16 @@ router.get("/", auth.auth, async (req, res) => {
     script: "/profile.js",
     isLogin: true,
     user: req.user.toObject(),
-    allStat: allStatisticsProduction(stat),
-    todayStat: stat.today,
-    lastMatch: stat.lastMatch,
+    allStat: statService.statisticToProfile(stat),
+    stat: stat.toObject(),
   });
 });
-router.get("/details", async (req, res) => {
+router.get("/getStatistic", async (req, res) => {
   let stat = await Statistic.findOne({ userId: req.user });
-  console.log('детальная статистика отправлена');
-  
-  res.send(stat.lastMatch.details);
+  console.log("статистика отправлена");
+  res.json(stat); 
 });
+
 
 router.get("/setting", auth.auth, (req, res) => {
   //рендерим эту страницу
@@ -142,20 +141,4 @@ router.get("/logout", (req, res) => {
   });
 });
 
-//получение детальной статистики
-function allStatisticsProduction(stat) {
-  let allStat = {
-    games: stat.modes.reduce((sum, current) => sum + current.allGames, 0),
-    examples: stat.modes.reduce((sum, current) => sum + current.allExample, 0),
-    correctExamples: stat.modes.reduce(
-      (sum, current) => sum + current.allCorrectExample,
-      0
-    ),
-    // percentageOfCorrectAnswers: stat.modes.reduce(
-    //   (sum, current) => sum + current.allExample,
-    //   0
-    // ),
-  };
-  return allStat;
-}
 module.exports = router;

@@ -2,7 +2,7 @@
   max-width: 980px;
 }
 .register {
-  border-radius: 5% 5% 5% 5% / 10% 10% 10% 10%;
+  border-radius: 30px;
   box-shadow: 0px 20px 30px #978f87;
   margin-top: 5rem;
   background-image: linear-gradient(to right, #ffdcc7, #ffd5b8, #ffcea8, #ffc899, #ffc189, #ffba7a, #febe76, #fdc272, #fdc66e, #fcc969, #fbcd65, #fad161);
@@ -31,7 +31,7 @@
   font-weight: bold;
   font-size: 2rem;
   text-align: center;
-  color: #ff9800;
+  color: #ff9900;
 }
 .register-name {
   background-color: gray;
@@ -93,7 +93,7 @@
   transition: all 0.1s;
 }
 .already-login {
-  background-color: #ff9800;
+  background-color: #ff9900;
   margin: 0 auto;
   border-radius: 35px;
   width: 50%;

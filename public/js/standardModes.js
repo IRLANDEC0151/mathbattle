@@ -468,14 +468,14 @@ let selectedBtn;
 document.querySelector(".btn-group-vertical").onclick = function (event) {
   let btn = event.target.closest("button"); // (1)
   console.log("click");
-  document
+  document 
     .querySelector(".btn-group-vertical button")
     .classList.remove("btn-success");
 
   highlight(btn);
 };
-function highlight(btn) {
-  if (selectedBtn) {
+function highlight(btn) {  
+  if (selectedBtn) { 
     // убрать существующую подсветку, если есть
     selectedBtn.classList.remove("btn-success");
   }
@@ -559,9 +559,9 @@ function addExampleToModalView(style) {
 
 function submitStatistic() {
   let match = {
-    nameModes: "Стандартный",
-    allExample: FastMatch.allExаmple,
-    correctExample: FastMatch.correctExаmple,
+    name: "Стандартный",
+    examples: FastMatch.allExаmple,
+    correctExamples: FastMatch.correctExаmple,
     percentageOfCorrectAnswers: FastMatch.percentageOfCorrectAnswers,
     timeMiddleExample: FastMatch.timeMiddleExample,
     details: document.querySelector(".modal-body tbody").outerHTML,
@@ -596,4 +596,13 @@ async function send(match) {
     .catch((e) => {
       console.log(e);
     });
+}
+let users = [
+  {id: 1, name: "Вася"},
+  {id: 2, name: "Петя"},
+  {id: 3, name: "Маша"}
+];
+if(users.find(item => item.id == 1)){
+  console.log('есть');
+  
 }

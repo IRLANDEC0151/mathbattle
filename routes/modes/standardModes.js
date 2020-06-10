@@ -4,7 +4,7 @@ const router = Router();
 const User = require("../../models/user");
 const Statistic = require("../../models/statistic");
 const statService = require("../../statisticsService");
-
+const nameMode = "Стандартный";
 
 router.get("/standardModes", (req, res) => {
   res.render("modes/standardModes", {
@@ -28,10 +28,10 @@ router.post("/standardModes", jsonParser, async (req, res) => {
     }
 
     statService.todayStat(stat, req.body);
-    
-    await statService.addToStat(stat, req.body);
 
-    res.json(req.body)
+    await statService.writeMatch(stat, req.body, nameMode);
+
+    res.json(req.body);
   } catch (error) {
     console.log(error);
   }
