@@ -23,6 +23,7 @@
   width: 100%;
 }
 .profile-info-bio ul {
+  padding: 0;
   list-style: none;
 }
 .profile-info-bio ul li {
@@ -121,6 +122,7 @@
   color: #ff9800;
 }
 .profile-stat-lastMatch .details {
+  display: none;
   margin-top: 1rem;
   text-align: center;
   font-size: 1.5rem;
@@ -132,6 +134,7 @@
   margin: 0 auto;
   background-color: #ffad50;
   border-radius: 8px;
+  display: none;
 }
 .profile-stat-lastMatch .lastMatchStat tbody {
   margin: 0 10px;

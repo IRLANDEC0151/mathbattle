@@ -2,6 +2,7 @@ const { Router } = require("express");
 const router = Router();
 //экспорт middleWare auth, для зашиты ссылки на профиль, если нет авторизации
 const auth = require("../middleware/auth");
+const isStat = require("../middleware/isStat");
 const User = require("../models/user");
 const Statistic = require("../models/statistic");
 const statService = require("../statisticsService");
@@ -14,9 +15,9 @@ let date = new Date();
 let isInput = false;
 let dataInput = {};
 
-router.get("/", auth.auth, async (req, res) => {
+router.get("/", auth.auth, isStat.isStat, async (req, res) => {
   let stat = await Statistic.findOne({ userId: req.user });
-  //рендерим эту страницу
+
   res.render("profile/profile", {
     title: "Профиль",
     style: "/profile.css",
@@ -30,9 +31,8 @@ router.get("/", auth.auth, async (req, res) => {
 router.get("/getStatistic", async (req, res) => {
   let stat = await Statistic.findOne({ userId: req.user });
   console.log("статистика отправлена");
-  res.json(stat); 
+  res.json(stat);
 });
-
 
 router.get("/setting", auth.auth, (req, res) => {
   //рендерим эту страницу

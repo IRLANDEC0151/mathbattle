@@ -1,19 +1,22 @@
+let modeStat = document.querySelector(".profile-stat-modeStat tbody");
+let lastMatch = document.querySelector(".profile-stat-lastMatch");
 getStat("/profile/getStatistic")
   .then((stat) => {
-    console.log("статистика получена");
     let statToJSON = JSON.parse(stat);
-    console.log(statToJSON);
-    document.querySelector(
-      ".modal-body tbody"
-    ).outerHTML = `${statToJSON.lastMatch.details}`;
-    pushModesStat(statToJSON.modes);
+    if (!statToJSON) {
+      console.log("Статистики еще нет");
+      lastMatch.insertAdjacentHTML("beforeEnd", "вы еще не играли");
+      modeStat.insertAdjacentHTML("beforebegin", `<p>вы еще не играли</p>`);
+      return 0;
+    }
+    showStat(statToJSON);
   })
   .catch((e) => {
     console.log(e);
   });
 function pushModesStat(modes) {
   modes.forEach((mode) => {
-    document.querySelector(".profile-stat-modeStat tbody").insertAdjacentHTML(
+    modeStat.insertAdjacentHTML(
       "beforebegin",
       `<tr>
       <th scope="row">${mode.name}</th>  
@@ -25,6 +28,18 @@ function pushModesStat(modes) {
     );
   });
 }
+
+
+function showStat(stat) {
+  console.log("статистика получена");
+  document.querySelector(
+    ".modal-body tbody"
+  ).outerHTML = `${stat.lastMatch.details}`;
+  document.querySelector(".lastMatchStat").style.display = "table";
+  document.querySelector(".details").style.display = "block";
+  pushModesStat(stat.modes);
+}
+
 
 async function getStat(url) {
   return fetch(url)
